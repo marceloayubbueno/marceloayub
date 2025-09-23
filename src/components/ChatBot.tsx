@@ -2,14 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './ChatBot.module.css';
 
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxlsgiP_JXeF7k3aFzwVUe7Wo0bQuW3gRwkspWlCtKD-aqelikAX2brb91cOlZN09X4/exec';
-const OBRIGADO_URL = 'https://virallead.com.br/obrigado-lead/';
+    const OBRIGADO_URL = 'https://wixweb.com.br/obrigado-lead/';
 
 const initialUserData = {
   nome: '',
   email: '',
   telefone: '',
   empresa: '',
-  funcionarios: ''
+  projeto: ''
 };
 
 type ChatButton = {
@@ -25,7 +25,7 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
   const [showTyping, setShowTyping] = useState(false);
   const [showButtons, setShowButtons] = useState<ChatButton[]>([]);
   const [isSending, setIsSending] = useState(false);
-  const [step, setStep] = useState<'start'|'nome'|'email'|'telefone'|'empresa'|'funcionarios'|'final'>('start');
+  const [step, setStep] = useState<'start'|'nome'|'email'|'telefone'|'empresa'|'projeto'|'final'>('start');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const initializedRef = useRef(false);
 
@@ -115,26 +115,26 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
       await addMessageWithDelay('De qual empresa você fala?', false, 1500);
     } else if (step === 'empresa') {
       setUserData((d) => ({ ...d, empresa: message }));
-      setStep('funcionarios');
-      await addMessageWithDelay('Última pergunta, qual número de funcionários da sua empresa?', false, 1500);
+      setStep('projeto');
+      await addMessageWithDelay('Perfeito! Que tipo de projeto você precisa?', false, 1500);
       await addButtonsWithDelay([
-        { text: '1 a 10', class: 'funcionarios', onClick: () => selectFuncionarios('1 a 10') },
-        { text: '11 a 50', class: 'funcionarios', onClick: () => selectFuncionarios('11 a 50') },
-        { text: '51 a 500', class: 'funcionarios', onClick: () => selectFuncionarios('51 a 500') },
-        { text: '501 a 1.000', class: 'funcionarios', onClick: () => selectFuncionarios('501 a 1.000') },
-        { text: 'Acima de 1.000', class: 'funcionarios', onClick: () => selectFuncionarios('Acima de 1.000') },
+        { text: 'Site Institucional', class: 'projeto', onClick: () => selectProjeto('Site Institucional') },
+        { text: 'E-commerce', class: 'projeto', onClick: () => selectProjeto('E-commerce') },
+        { text: 'Aplicação Web', class: 'projeto', onClick: () => selectProjeto('Aplicação Web') },
+        { text: 'Sistema Personalizado', class: 'projeto', onClick: () => selectProjeto('Sistema Personalizado') },
+        { text: 'Aplicativo Mobile', class: 'projeto', onClick: () => selectProjeto('Aplicativo Mobile') },
       ], 1000);
     }
   };
 
-  // Função para selecionar número de funcionários
-  const selectFuncionarios = async (numero: string) => {
+  // Função para selecionar tipo de projeto
+  const selectProjeto = async (tipo: string) => {
     setShowButtons([]);
-    addMessage(`Número de funcionários: ${numero}`, true);
+    addMessage(`Tipo de projeto: ${tipo}`, true);
     setStep('final');
     const data = {
       ...userData,
-      funcionarios: numero,
+      projeto: tipo,
       dataHora: new Date().toLocaleString('pt-BR'),
     };
     await addMessageWithDelay('Enviando suas informações...', false, 1000);
@@ -144,7 +144,7 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
       setTimeout(() => {
         if (typeof window !== 'undefined') {
           window.sessionStorage.setItem('leadAcesso', 'ok');
-          if (numero === '1 a 10') {
+          if (tipo === 'Site Institucional') {
             window.location.href = '/obrigadolead';
           } else {
             window.location.href = '/obrigadoleadqualificado';
@@ -162,13 +162,13 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
   const startChat = async () => {
     setStep('start');
     await addMessageWithDelay('Olá, tudo bem?', false, 500);
-    await addMessageWithDelay('Gostaria de conhecer mais sobre nosso Software?', false, 1500);
+    await addMessageWithDelay('Gostaria de saber mais sobre nossos serviços de desenvolvimento web?', false, 1500);
     await addButtonsWithDelay([
-      { text: (<><span>SIM, QUERO CONHECER</span> <span style={{fontSize:'1.2em',marginLeft:'0.3em'}}>&rarr;</span></>), class: 'sim', onClick: async () => {
-        addMessage('SIM, QUERO CONHECER', true);
+      { text: (<><span>SIM, QUERO SABER MAIS</span> <span style={{fontSize:'1.2em',marginLeft:'0.3em'}}>&rarr;</span></>), class: 'sim', onClick: async () => {
+        addMessage('SIM, QUERO SABER MAIS', true);
         setShowButtons([]);
         setStep('nome');
-        await addMessageWithDelay('Show! Vou pegar umas informações rápidas', false, 1000);
+        await addMessageWithDelay('Perfeito! Vou coletar algumas informações para te ajudar melhor', false, 1000);
         await addMessageWithDelay('Qual o seu nome?', false, 1500);
       }},
     ], 1000);
@@ -202,7 +202,7 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
     <div className={fullscreen ? `${styles.chatbotContainer} ${styles.fullscreen}` : styles.chatbotContainer} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       {/* Header do Chatbot */}
       <div className={styles.chatbotHeader} style={{ flex: '0 0 auto' }}>
-        <span>Viral Lead</span>
+        <span>Wixweb</span>
       </div>
       {/* Área de mensagens */}
       <div className={styles.chatbotMessages} style={{ flex: '1 1 auto', overflowY: 'auto', minHeight: 0 }}>

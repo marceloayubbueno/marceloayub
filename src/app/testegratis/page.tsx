@@ -1,7 +1,6 @@
 "use client";
 import Header from '@/components/Header'
-import HowItWorks from '@/components/HowItWorks'
-import Results from '@/components/Results'
+import Services from '@/components/Services'
 import ModernPricing from '@/components/ModernPricing'
 import ModernFooter from '@/components/ModernFooter'
 import ChatBotForm from '@/components/ChatBotForm'
@@ -54,8 +53,7 @@ export default function TesteGratis() {
         </div>
       </section>
       {/* Restante da página igual */}
-      <HowItWorks />
-      <Results />
+      <Services />
       <ModernPricing />
       <ModernFooter />
     </main>

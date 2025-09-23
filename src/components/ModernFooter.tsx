@@ -8,7 +8,7 @@ const ModernFooter = () => {
   const router = useRouter()
 
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-black text-white py-16">
       <div className="container">
         {/* CTA Final */}
         <motion.div 
@@ -20,11 +20,11 @@ const ModernFooter = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Pronto para transformar<br />
-            <span className="text-blue-400">clientes em indicadores</span>?
+            <span className="text-green-400">sua ideia em realidade</span>?
           </h2>
           
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Junte-se a centenas de empresas que já estão crescendo com programas de indicação inteligentes.
+            Junte-se a centenas de empresas que já estão crescendo com soluções digitais inteligentes.
           </p>
           
           <motion.button
@@ -36,7 +36,7 @@ const ModernFooter = () => {
                 router.push('/chat');
               }
             }}
-            className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200 group"
+            className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -56,16 +56,16 @@ const ModernFooter = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center mb-4">
-              <div className="h-10 w-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg mr-3"></div>
-              <span className="text-2xl font-bold">Viral Lead</span>
+              <div className="h-10 w-10 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg mr-3"></div>
+              <span className="text-2xl font-bold font-mono">Wix<span className="text-green-400">web</span></span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              A plataforma mais intuitiva para criar e gerenciar programas de indicação que realmente convertem.
+              Desenvolvemos soluções digitais que transformam ideias em realidade, impulsionando o crescimento do seu negócio.
             </p>
             <div className="space-y-2">
               <div className="flex items-center text-gray-400">
                 <Mail className="w-4 h-4 mr-3" />
-              <span>marceloayub@virallead.com.br</span>
+              <span>contato@wixweb.com.br</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="w-4 h-4 mr-3" />
@@ -88,14 +88,14 @@ const ModernFooter = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold mb-4">Produto</h3>
+            <h3 className="text-lg font-semibold mb-4">Serviços</h3>
             <ul className="space-y-2">
               {[
-                'Como Funciona',
-                'Preços',
-                'Integrações',
-                'Recursos',
-                'API'
+                'Sites Institucionais',
+                'E-commerce',
+                'Aplicações Web',
+                'Apps Mobile',
+                'Sistemas Personalizados'
               ].map((link, index) => (
                 <li key={index}>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">

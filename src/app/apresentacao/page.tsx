@@ -1,7 +1,6 @@
 "use client";
 import Header from '@/components/Header';
 import ModernFooter from '@/components/ModernFooter';
-import CaseStudies from '@/components/CaseStudies';
 import HowItWorks from '@/components/HowItWorks';
 import { Users, Zap, TrendingUp, Mail, Smartphone } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';

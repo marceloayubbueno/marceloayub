@@ -8,15 +8,15 @@ const initialUserData = {
   email: '',
   telefone: '',
   empresa: '',
-  funcionarios: '',
+  projeto: '',
 };
 
-const funcionariosOptions = [
-  '1 a 10',
-  '11 a 50',
-  '51 a 500',
-  '501 a 1.000',
-  'Acima de 1.000',
+const projetoOptions = [
+  'Site Institucional',
+  'E-commerce',
+  'Aplicação Web',
+  'Sistema Personalizado',
+  'Aplicativo Mobile',
 ];
 
 const ChatBotForm = () => {
@@ -57,8 +57,8 @@ const ChatBotForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-gray-900 p-8 rounded-xl shadow-xl flex flex-col gap-4 w-full max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-white mb-2">Solicite seu Teste Grátis</h2>
-      <p className="text-gray-300 mb-4">Preencha os dados abaixo e nossa equipe entrará em contato para liberar seu acesso.</p>
+      <h2 className="text-2xl font-bold text-white mb-2">Solicite seu Orçamento</h2>
+      <p className="text-gray-300 mb-4">Preencha os dados abaixo e nossa equipe entrará em contato para apresentar uma proposta personalizada.</p>
       <input
         type="text"
         name="nome"
@@ -96,14 +96,14 @@ const ChatBotForm = () => {
         className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <select
-        name="funcionarios"
-        value={userData.funcionarios}
+        name="projeto"
+        value={userData.projeto}
         onChange={handleChange}
         required
         className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
-        <option value="">Nº de funcionários</option>
-        {funcionariosOptions.map((opt) => (
+        <option value="">Tipo de projeto</option>
+        {projetoOptions.map((opt) => (
           <option key={opt} value={opt}>{opt}</option>
         ))}
       </select>
@@ -113,7 +113,7 @@ const ChatBotForm = () => {
         disabled={isSending}
         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all disabled:opacity-60"
       >
-        {isSending ? 'Enviando...' : 'Solicitar Teste Grátis'}
+        {isSending ? 'Enviando...' : 'Solicitar Orçamento'}
       </button>
     </form>
   );

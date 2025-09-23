@@ -3,9 +3,9 @@ import './globals.css'
 import PixelAndConsentProvider from '../components/PixelAndConsentProvider';
 
 export const metadata: Metadata = {
-  title: 'Viral Lead - Plataforma Moderna de Programas de Afiliados',
-  description: 'Lance programas de afiliados, indicação e influenciadores em menos de 15 minutos. Construído para empresas SaaS modernas.',
-  keywords: 'programa de afiliados, marketing de indicação, marketing de influenciadores, SaaS, plataforma de afiliados',
+  title: 'Wixweb - Desenvolvimento Web Profissional | Sites, Sistemas Web, Landing Pages e WordPress',
+  description: 'Desenvolvemos sites profissionais, sistemas web personalizados, landing pages de alta conversão e projetos WordPress customizados. Soluções web modernas e otimizadas para impulsionar seu negócio digital.',
+  keywords: 'desenvolvimento web, sites profissionais, sistemas web, landing pages, WordPress, e-commerce, sites responsivos, React, Next.js, PHP, MySQL, agência web',
 }
 
 export default function RootLayout({

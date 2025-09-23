@@ -1,9 +1,11 @@
 "use client";
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import HowItWorks from '@/components/HowItWorks'
+import Services from '@/components/Services'
+import Portfolio from '@/components/Portfolio'
+import Testimonials from '@/components/Testimonials'
+import Stats from '@/components/Stats'
 import Results from '@/components/Results'
-import ModernPricing from '@/components/ModernPricing'
 import ModernFooter from '@/components/ModernFooter'
 import ChatBot from '@/components/ChatBot'
 import { useState } from 'react'
@@ -39,9 +41,11 @@ export default function Home() {
     <main className="overflow-hidden">
       <Header />
       <Hero />
-      <HowItWorks />
+      <Services />
+      <Portfolio />
+      <Testimonials />
+      <Stats />
       <Results />
-      <ModernPricing />
       <ModernFooter />
       {/* ChatBot Flutuante */}
       <div>

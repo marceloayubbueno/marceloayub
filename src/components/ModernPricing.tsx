@@ -23,7 +23,7 @@ const ModernPricing = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center px-4 py-2 bg-blue-600/20 backdrop-blur-sm border border-blue-500/30 rounded-full text-blue-300 text-sm font-medium mb-6"
+            className="inline-flex items-center px-4 py-2 bg-green-600/20 backdrop-blur-sm border border-green-500/30 rounded-full text-green-300 text-sm font-medium mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -33,12 +33,13 @@ const ModernPricing = () => {
           </motion.div>
           
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Comece <span className="text-blue-400">hoje mesmo</span><br />
-            e veja os resultados
+            Comece <span className="text-green-400">hoje mesmo</span><br />
+            seu projeto digital
           </h2>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Conheça os principais recursos que tornam nossa plataforma completa para impulsionar suas indicações, automatizar processos e facilitar o crescimento do seu negócio.
+            Conheça nossos pacotes de desenvolvimento web e escolha o que melhor se adapta às suas necessidades. 
+            Soluções completas para impulsionar seu negócio digital.
           </p>
         </motion.div>
 
@@ -52,7 +53,7 @@ const ModernPricing = () => {
           <div className="relative">
             {/* Glow Effect */}
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur-2xl opacity-20"
+              className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 rounded-3xl blur-2xl opacity-20"
               animate={{
                 scale: [1, 1.05, 1],
                 opacity: [0.2, 0.3, 0.2],
@@ -72,19 +73,19 @@ const ModernPricing = () => {
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                  <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center">
+                  <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center">
                     <Zap className="w-4 h-4 mr-2" />
-                    Teste Grátis 15 dias
+                    Consultoria Grátis
                   </div>
                 </motion.div>
                 <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold mb-4">Acesse a Plataforma Completa</h3>
+                  <h3 className="text-3xl font-bold mb-4">Consultoria Estratégica Grátis</h3>
                   <div className="mb-6">
                     <div className="flex items-baseline justify-center mb-2">
                       <span className="text-5xl font-bold text-green-400">R$ 0,00</span>
-                      <span className="text-gray-400 ml-2">/15 dias</span>
+                      <span className="text-gray-400 ml-2">/consulta</span>
                     </div>
-                    <div className="text-green-400 font-semibold">Sem compromisso, sem cartão de crédito</div>
+                    <div className="text-green-400 font-semibold">Análise completa do seu projeto</div>
                   </div>
                 </div>
                 <motion.div 
@@ -95,14 +96,14 @@ const ModernPricing = () => {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      'Acesso total à plataforma',
-                      'Dashboard completo',
-                      'Automação de pagamentos',
-                      'Materiais profissionais',
-                      'Analytics avançados', 
-                      'Suporte prioritário',
-                      'Integrações nativas',
-                      'Treinamento incluído'
+                      'Análise completa do projeto',
+                      'Estratégia de desenvolvimento',
+                      'Cronograma detalhado',
+                      'Orçamento personalizado',
+                      'Tecnologias recomendadas', 
+                      'Suporte técnico',
+                      'Consultoria especializada',
+                      'Relatório executivo'
                     ].map((feature, index) => (
                       <motion.div
                         key={index}
@@ -118,16 +119,16 @@ const ModernPricing = () => {
                   </div>
                 </motion.div>
                 <motion.div 
-                  className="bg-blue-500/10 border border-blue-500/20 rounded-2xl p-6 mb-8"
+                  className="bg-green-500/10 border border-green-500/20 rounded-2xl p-6 mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 1.2 }}
                 >
                   <div className="text-center">
                     <div className="text-4xl mb-3">🎉</div>
-                    <h4 className="text-lg font-bold text-blue-400 mb-2">15 dias de Teste Grátis</h4>
+                    <h4 className="text-lg font-bold text-green-400 mb-2">Consultoria Estratégica</h4>
                     <p className="text-gray-300 text-sm">
-                      Experimente todos os recursos sem compromisso. Após o período, escolha se deseja continuar.
+                      Análise completa do seu projeto sem compromisso. Entenda exatamente o que precisa para ter sucesso.
                     </p>
                   </div>
                 </motion.div>
@@ -142,11 +143,11 @@ const ModernPricing = () => {
                       const form = document.getElementById('form-testegratis');
                       if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }}
-                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 group mb-4"
+                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group mb-4"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Começar Meu Teste Agora
+                    Solicitar Consultoria Grátis
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline" />
                   </motion.button>
                   <p className="text-gray-400 text-sm">
@@ -158,9 +159,9 @@ const ModernPricing = () => {
               <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12">
                 
                 <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold mb-4">Principais Recursos</h3>
+                  <h3 className="text-3xl font-bold mb-4">Nossos Serviços</h3>
                   <p className="text-gray-300 mb-6 max-w-xl mx-auto">
-                    Tudo o que você precisa para impulsionar suas indicações e automatizar seu crescimento. Confira os principais recursos disponíveis na plataforma:
+                    Soluções completas em desenvolvimento web para impulsionar seu negócio digital. Confira os principais serviços que oferecemos:
                   </p>
                 </div>
 
@@ -173,14 +174,14 @@ const ModernPricing = () => {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      'Integrações nativas',
-                      'Dashboard completo',
-                      'Automação de pagamentos',
-                      'Materiais profissionais',
-                      'Analytics avançados', 
-                      'Suporte prioritário',
-                      'Integrações nativas',
-                      'Treinamento incluído'
+                      'Sites responsivos',
+                      'E-commerce completo',
+                      'Aplicações mobile',
+                      'Sistemas personalizados',
+                      'Manutenção e suporte', 
+                      'Consultoria técnica',
+                      'SEO e performance',
+                      'Integrações avançadas'
                     ].map((feature, index) => (
                       <motion.div
                         key={index}
@@ -212,11 +213,11 @@ const ModernPricing = () => {
                         router.push('/chat');
                       }
                     }}
-                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 group mb-4"
+                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group mb-4"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Agendar uma demonstração
+                    Solicitar Orçamento
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline" />
                   </motion.button>
                   
@@ -238,12 +239,12 @@ const ModernPricing = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">500+</div>
-              <div className="text-gray-300">Empresas já transformadas</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">150+</div>
+              <div className="text-gray-300">Projetos entregues</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">R$ 50M+</div>
-              <div className="text-gray-300">Gerados em indicações</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">98%</div>
+              <div className="text-gray-300">Performance média dos sites</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-400 mb-2">4.9★</div>
@@ -264,20 +265,20 @@ const ModernPricing = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               {
-                q: "Preciso ter conhecimento técnico para usar?",
-                a: "Não! A plataforma é simples e intuitiva. Em poucos cliques, você configura sua campanha de indicações e acompanha os resultados em tempo real."
+                q: "Quanto tempo leva para desenvolver um site?",
+                a: "Depende da complexidade. Sites institucionais simples levam 2-4 semanas, e-commerces 4-8 semanas, e sistemas personalizados podem levar 2-6 meses."
               },
               {
-                q: "Existe algum contrato ou fidelidade?",
-                a: "Não. Você pode cancelar a qualquer momento. Nosso objetivo é oferecer resultados, não prender clientes por contrato."
+                q: "Vocês oferecem manutenção após a entrega?",
+                a: "Sim! Oferecemos pacotes de manutenção mensal que incluem atualizações, backups, monitoramento e suporte técnico contínuo."
               },
               {
-                q: "Como funciona o software de indicação de clientes?",
-                a: "Nosso software permite que seus clientes indiquem amigos e conhecidos para seu negócio. Cada indicação é registrada, e você pode recompensar quem indicou de forma automática e personalizada."
+                q: "Posso acompanhar o desenvolvimento do projeto?",
+                a: "Claro! Utilizamos ferramentas de gestão de projeto onde você pode acompanhar o progresso em tempo real e dar feedback durante todo o desenvolvimento."
               },
               {
-                q: "É seguro?",
-                a: "Totalmente. Utilizamos criptografia e seguimos as boas práticas de segurança para garantir a proteção dos seus dados e dos seus clientes."
+                q: "Quais tecnologias vocês utilizam?",
+                a: "Trabalhamos com as melhores tecnologias: React, Next.js, Node.js, TypeScript, e muitas outras. Sempre escolhemos a melhor stack para cada projeto."
               }
             ].map((faq, index) => (
               <motion.div
