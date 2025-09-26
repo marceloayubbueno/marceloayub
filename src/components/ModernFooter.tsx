@@ -148,7 +148,7 @@ const ModernFooter = () => {
           </p>
           
           <div className="flex space-x-6 text-sm">
-            <a href="https://virallead.com.br/privacidade" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://www.uixweb.com.br/privacidade" className="text-gray-400 hover:text-white transition-colors">
               Política de Privacidade
             </a>
             <a href="#" className="text-gray-400 hover:text-white transition-colors">
