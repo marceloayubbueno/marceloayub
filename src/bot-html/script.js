@@ -1,5 +1,5 @@
 // Configuração do Google Sheets
-const SCRIPT_URL = 'SUA_URL_DO_GOOGLE_APPS_SCRIPT'; // Substitua pela URL do seu Google Apps Script
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeC4wkVxZFKm1Bm8OW0Zsl9SlYKAS4-xUGiGYMdLEDoR_6L3bhshq9rQi_6QUSotVROA/exec';
 
 // Elementos do DOM
 const chatMessages = document.getElementById('chatMessages');
@@ -54,6 +54,7 @@ function processUserMessage(message) {
         addMessage('Por fim, qual é a sua mensagem?');
     } else {
         userData.mensagem = message;
+        userData.fonte = 'chatbot-script';
         addMessage('Obrigado pelo contato! Suas informações foram registradas e entraremos em contato em breve.');
         
         // Enviar dados para o Google Sheets

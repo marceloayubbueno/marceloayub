@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxlsgiP_JXeF7k3aFzwVUe7Wo0bQuW3gRwkspWlCtKD-aqelikAX2brb91cOlZN09X4/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeC4wkVxZFKm1Bm8OW0Zsl9SlYKAS4-xUGiGYMdLEDoR_6L3bhshq9rQi_6QUSotVROA/exec';
 
 const initialUserData = {
   nome: '',
@@ -9,14 +9,23 @@ const initialUserData = {
   telefone: '',
   empresa: '',
   projeto: '',
+  funcionarios: '',
 };
 
 const projetoOptions = [
-  'Site Institucional',
-  'E-commerce',
-  'Aplicação Web',
-  'Sistema Personalizado',
-  'Aplicativo Mobile',
+  'Sites Institucionais',
+  'Landing Pages Profissionais',
+  'Sistemas Web Personalizados',
+  'Aplicativos Mobile',
+  'Manutenção & Suporte Web',
+];
+
+const funcionariosOptions = [
+  '1-5 funcionários',
+  '6-20 funcionários',
+  '21-50 funcionários',
+  '51-100 funcionários',
+  '100+ funcionários',
 ];
 
 const ChatBotForm = () => {
@@ -34,20 +43,25 @@ const ChatBotForm = () => {
     e.preventDefault();
     setIsSending(true);
     setError('');
+    
     try {
       const formData = new FormData();
       Object.keys(userData).forEach((key) => formData.append(key, userData[key as keyof typeof userData]));
       formData.append('dataHora', new Date().toLocaleString('pt-BR'));
+      formData.append('fonte', 'formulario-principal');
+      
       await fetch(SCRIPT_URL, {
         method: 'POST',
         body: formData,
         mode: 'no-cors',
       });
+      
       if (typeof window !== 'undefined') {
         window.sessionStorage.setItem('leadAcesso', 'ok');
         router.push('/obrigadolead');
       }
       setUserData(initialUserData);
+      
     } catch (err) {
       setError('Erro ao enviar. Tente novamente.');
     } finally {
@@ -95,6 +109,18 @@ const ChatBotForm = () => {
         required
         className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       />
+      <select
+        name="funcionarios"
+        value={userData.funcionarios}
+        onChange={handleChange}
+        required
+        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+      >
+        <option value="">Número de funcionários</option>
+        {funcionariosOptions.map((opt) => (
+          <option key={opt} value={opt}>{opt}</option>
+        ))}
+      </select>
       <select
         name="projeto"
         value={userData.projeto}

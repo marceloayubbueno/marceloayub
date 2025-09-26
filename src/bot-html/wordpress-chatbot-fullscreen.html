@@ -268,7 +268,7 @@
 
     <script>
         // Configuração do Google Sheets
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxlsgiP_JXeF7k3aFzwVUe7Wo0bQuW3gRwkspWlCtKD-aqelikAX2brb91cOlZN09X4/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeC4wkVxZFKm1Bm8OW0Zsl9SlYKAS4-xUGiGYMdLEDoR_6L3bhshq9rQi_6QUSotVROA/exec';
         const OBRIGADO_URL = 'https://virallead.com.br/obrigado-lead/';
 
         // Elementos do DOM
@@ -447,6 +447,7 @@
                 
                 // Adiciona data e hora ao envio
                 userData.dataHora = new Date().toLocaleString('pt-BR');
+                userData.fonte = 'chatbot-wordpress-fullscreen';
                 
                 // Mostra mensagem de "enviando dados..."
                 await addMessageWithDelay('Enviando suas informações...', false, 1000);

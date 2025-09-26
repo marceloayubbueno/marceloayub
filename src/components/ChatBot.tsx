@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './ChatBot.module.css';
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxlsgiP_JXeF7k3aFzwVUe7Wo0bQuW3gRwkspWlCtKD-aqelikAX2brb91cOlZN09X4/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeC4wkVxZFKm1Bm8OW0Zsl9SlYKAS4-xUGiGYMdLEDoR_6L3bhshq9rQi_6QUSotVROA/exec';
     const OBRIGADO_URL = 'https://uixweb.com.br/obrigado-lead/';
 
 const initialUserData = {
@@ -86,6 +86,7 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
     try {
       const formData = new FormData();
       Object.keys(data).forEach((key) => formData.append(key, data[key]));
+      formData.append('fonte', 'chatbot');
       await fetch(SCRIPT_URL, {
         method: 'POST',
         body: formData,
@@ -118,11 +119,11 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
       setStep('projeto');
       await addMessageWithDelay('Perfeito! Que tipo de projeto você precisa?', false, 1500);
       await addButtonsWithDelay([
-        { text: 'Site Institucional', class: 'projeto', onClick: () => selectProjeto('Site Institucional') },
-        { text: 'E-commerce', class: 'projeto', onClick: () => selectProjeto('E-commerce') },
-        { text: 'Aplicação Web', class: 'projeto', onClick: () => selectProjeto('Aplicação Web') },
-        { text: 'Sistema Personalizado', class: 'projeto', onClick: () => selectProjeto('Sistema Personalizado') },
-        { text: 'Aplicativo Mobile', class: 'projeto', onClick: () => selectProjeto('Aplicativo Mobile') },
+        { text: 'Sites Institucionais', class: 'projeto', onClick: () => selectProjeto('Sites Institucionais') },
+        { text: 'Landing Pages Profissionais', class: 'projeto', onClick: () => selectProjeto('Landing Pages Profissionais') },
+        { text: 'Sistemas Web Personalizados', class: 'projeto', onClick: () => selectProjeto('Sistemas Web Personalizados') },
+        { text: 'Aplicativos Mobile', class: 'projeto', onClick: () => selectProjeto('Aplicativos Mobile') },
+        { text: 'Manutenção & Suporte Web', class: 'projeto', onClick: () => selectProjeto('Manutenção & Suporte Web') },
       ], 1000);
     }
   };
@@ -144,7 +145,7 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
       setTimeout(() => {
         if (typeof window !== 'undefined') {
           window.sessionStorage.setItem('leadAcesso', 'ok');
-          if (tipo === 'Site Institucional') {
+          if (tipo === 'Sites Institucionais') {
             window.location.href = '/obrigadolead';
           } else {
             window.location.href = '/obrigadoleadqualificado';
