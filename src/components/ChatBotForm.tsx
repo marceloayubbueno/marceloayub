@@ -45,7 +45,7 @@ const ChatBotForm = () => {
       });
       if (typeof window !== 'undefined') {
         window.sessionStorage.setItem('leadAcesso', 'ok');
-        router.push('/obrigadotestegratis');
+        router.push('/obrigadolead');
       }
       setUserData(initialUserData);
     } catch (err) {
@@ -56,8 +56,8 @@ const ChatBotForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-900 p-8 rounded-xl shadow-xl flex flex-col gap-4 w-full max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-white mb-2">Solicite seu Orçamento</h2>
+    <form onSubmit={handleSubmit} className="bg-gray-900/50 backdrop-blur-sm border border-green-500/20 p-8 rounded-xl shadow-xl flex flex-col gap-4 w-full max-w-md mx-auto">
+      <h2 className="text-2xl font-bold text-white mb-2">Vamos conversar sobre seu projeto</h2>
       <p className="text-gray-300 mb-4">Preencha os dados abaixo e nossa equipe entrará em contato para apresentar uma proposta personalizada.</p>
       <input
         type="text"
@@ -66,7 +66,7 @@ const ChatBotForm = () => {
         value={userData.nome}
         onChange={handleChange}
         required
-        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       />
       <input
         type="email"
@@ -75,7 +75,7 @@ const ChatBotForm = () => {
         value={userData.email}
         onChange={handleChange}
         required
-        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       />
       <input
         type="tel"
@@ -84,7 +84,7 @@ const ChatBotForm = () => {
         value={userData.telefone}
         onChange={handleChange}
         required
-        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       />
       <input
         type="text"
@@ -93,14 +93,14 @@ const ChatBotForm = () => {
         value={userData.empresa}
         onChange={handleChange}
         required
-        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       />
       <select
         name="projeto"
         value={userData.projeto}
         onChange={handleChange}
         required
-        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       >
         <option value="">Tipo de projeto</option>
         {projetoOptions.map((opt) => (
@@ -111,9 +111,9 @@ const ChatBotForm = () => {
       <button
         type="submit"
         disabled={isSending}
-        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all disabled:opacity-60"
+        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-all disabled:opacity-60"
       >
-        {isSending ? 'Enviando...' : 'Solicitar Orçamento'}
+        {isSending ? 'Enviando...' : 'Falar com Especialista'}
       </button>
     </form>
   );

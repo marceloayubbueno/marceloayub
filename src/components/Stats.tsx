@@ -107,6 +107,10 @@ const Stats = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
         >
           <motion.button
+            onClick={() => {
+              const form = document.getElementById('formulario-contato');
+              if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
             className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

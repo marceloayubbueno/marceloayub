@@ -33,7 +33,8 @@ const ModernFooter = () => {
                 const form = document.getElementById('form-testegratis');
                 if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
               } else {
-                router.push('/chat');
+                const form = document.getElementById('formulario-contato');
+                if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
               }
             }}
             className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200 group"
@@ -56,8 +57,10 @@ const ModernFooter = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center mb-4">
-              <div className="h-10 w-10 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg mr-3"></div>
-              <span className="text-2xl font-bold font-mono">Wix<span className="text-green-400">web</span></span>
+              <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
+                <span className="text-white font-mono text-lg leading-none">&lt;&gt;</span>
+              </div>
+              <span className="text-2xl font-bold font-mono">Uix<span className="text-green-400">web</span></span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Desenvolvemos soluções digitais que transformam ideias em realidade, impulsionando o crescimento do seu negócio.
@@ -65,7 +68,7 @@ const ModernFooter = () => {
             <div className="space-y-2">
               <div className="flex items-center text-gray-400">
                 <Mail className="w-4 h-4 mr-3" />
-              <span>contato@wixweb.com.br</span>
+              <span>contato@uixweb.com.br</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="w-4 h-4 mr-3" />
@@ -141,7 +144,7 @@ const ModernFooter = () => {
           viewport={{ once: true }}
         >
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 Viral Lead. Todos os direitos reservados.
+            © 2025 Uixweb. Todos os direitos reservados.
           </p>
           
           <div className="flex space-x-6 text-sm">

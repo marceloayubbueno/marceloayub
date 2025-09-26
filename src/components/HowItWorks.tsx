@@ -217,12 +217,8 @@ const HowItWorks = () => {
         >
           <motion.button
             onClick={() => {
-              if (typeof window !== 'undefined' && window.location.pathname === '/testegratis') {
-                const form = document.getElementById('form-testegratis');
-                if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              } else {
-                router.push('/chat');
-              }
+              const form = document.getElementById('formulario-contato');
+              if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}
             className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200 group"
             whileHover={{ scale: 1.05 }}

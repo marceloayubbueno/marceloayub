@@ -43,7 +43,7 @@ const Hero = () => {
           animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          &lt;Wixweb&gt;
+          &lt;Uixweb&gt;
         </motion.div>
         <motion.div 
           className="absolute top-40 right-20 text-green-400 font-mono text-sm opacity-30"
@@ -145,7 +145,8 @@ const Hero = () => {
                     const form = document.getElementById('form-testegratis');
                     if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
                   } else {
-                    router.push('/chat');
+                    const form = document.getElementById('formulario-contato');
+                    if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
                   }
                 }}
                 className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group"
@@ -208,7 +209,7 @@ const Hero = () => {
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <div className="text-green-400 text-sm font-mono">Wixweb Terminal</div>
+                <div className="text-green-400 text-sm font-mono">Uixweb Terminal</div>
               </div>
 
               {/* Terminal Content */}
@@ -221,7 +222,7 @@ const Hero = () => {
                 >
                   <div className="flex items-center mb-2">
                     <span className="text-emerald-400">$</span>
-                    <span className="ml-2">npm create wixweb-app</span>
+                    <span className="ml-2">npm create uixweb-app</span>
                   </div>
                   <div className="text-gray-300 text-xs">
                     ✓ Instalando dependências...<br/>

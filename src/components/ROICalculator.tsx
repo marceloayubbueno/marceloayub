@@ -181,7 +181,10 @@ const ROICalculator = () => {
               </div>
 
               <motion.button
-                onClick={() => router.push('/chat')}
+                onClick={() => {
+                  const form = document.getElementById('formulario-contato');
+                  if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }}
                 className="w-full mt-6 bg-white text-blue-600 font-bold py-4 px-6 rounded-xl hover:bg-gray-50 transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

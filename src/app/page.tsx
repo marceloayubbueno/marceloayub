@@ -6,6 +6,7 @@ import Portfolio from '@/components/Portfolio'
 import Testimonials from '@/components/Testimonials'
 import Stats from '@/components/Stats'
 import Results from '@/components/Results'
+import ChatBotForm from '@/components/ChatBotForm'
 import ModernFooter from '@/components/ModernFooter'
 // import ChatBot from '@/components/ChatBot' // DESABILITADO
 // import { useState } from 'react' // DESABILITADO
@@ -23,11 +24,55 @@ export default function Home() {
       <Testimonials />
       <Stats />
       <Results />
+      {/* Seção de Formulário de Contato */}
+      <section id="formulario-contato" className="relative overflow-hidden bg-black py-20">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full opacity-20 blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-32 w-80 h-80 bg-gradient-to-br from-emerald-600 to-green-500 rounded-full opacity-30 blur-3xl"></div>
+        </div>
+        
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Pronto para transformar sua{' '}
+                <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                  ideia em realidade
+                </span>?
+              </h2>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Preencha os dados e nossa equipe entrará em contato para apresentar uma proposta personalizada para seu projeto.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span className="text-gray-300">Proposta personalizada em até 24h</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span className="text-gray-300">Consultoria gratuita</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span className="text-gray-300">Sem compromisso</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column - Form */}
+            <div className="flex justify-center lg:justify-end">
+              <ChatBotForm />
+            </div>
+          </div>
+        </div>
+      </section>
       <ModernFooter />
       {/* Botão WhatsApp Flutuante */}
       <div>
         <a
-          href="https://wa.me/5528999221118"
+          href="https://wa.me/5528998846446"
           target="_blank"
           rel="noopener noreferrer"
           style={{

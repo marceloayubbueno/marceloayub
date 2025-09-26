@@ -197,7 +197,10 @@ const Services = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
         >
           <motion.button
-            onClick={() => router.push('/chat')}
+            onClick={() => {
+              const form = document.getElementById('formulario-contato');
+              if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
             className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-6 px-12 rounded-2xl text-xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

@@ -78,7 +78,7 @@ const Methodology = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Settings className="w-4 h-4 mr-2" />
-            Metodologia Wixweb
+            Metodologia Uixweb
           </motion.div>
           
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">

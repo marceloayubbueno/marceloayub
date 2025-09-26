@@ -45,7 +45,7 @@ const Testimonials = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Acompanhe o que os nossos <span className="text-green-400">clientes falam</span> sobre a Wixweb
+            Acompanhe o que os nossos <span className="text-green-400">clientes falam</span> sobre a Uixweb
           </h2>
         </motion.div>
 

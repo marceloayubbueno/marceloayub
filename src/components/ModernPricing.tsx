@@ -140,7 +140,7 @@ const ModernPricing = () => {
                 >
                   <motion.button
                     onClick={() => {
-                      const form = document.getElementById('form-testegratis');
+                      const form = document.getElementById('formulario-contato');
                       if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }}
                     className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group mb-4"
@@ -206,12 +206,8 @@ const ModernPricing = () => {
                 >
                   <motion.button
                     onClick={() => {
-                      if (typeof window !== 'undefined' && window.location.pathname === '/testegratis') {
-                        const form = document.getElementById('form-testegratis');
-                        if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                      } else {
-                        router.push('/chat');
-                      }
+                      const form = document.getElementById('formulario-contato');
+                      if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }}
                     className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group mb-4"
                     whileHover={{ scale: 1.02 }}

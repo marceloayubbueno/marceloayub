@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './ChatBot.module.css';
 
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxlsgiP_JXeF7k3aFzwVUe7Wo0bQuW3gRwkspWlCtKD-aqelikAX2brb91cOlZN09X4/exec';
-    const OBRIGADO_URL = 'https://wixweb.com.br/obrigado-lead/';
+    const OBRIGADO_URL = 'https://uixweb.com.br/obrigado-lead/';
 
 const initialUserData = {
   nome: '',
@@ -202,7 +202,7 @@ const ChatBot = ({ fullscreen = false }: { fullscreen?: boolean }) => {
     <div className={fullscreen ? `${styles.chatbotContainer} ${styles.fullscreen}` : styles.chatbotContainer} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       {/* Header do Chatbot */}
       <div className={styles.chatbotHeader} style={{ flex: '0 0 auto' }}>
-        <span>Wixweb</span>
+        <span>Uixweb</span>
       </div>
       {/* Área de mensagens */}
       <div className={styles.chatbotMessages} style={{ flex: '1 1 auto', overflowY: 'auto', minHeight: 0 }}>

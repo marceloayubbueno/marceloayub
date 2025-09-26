@@ -13,16 +13,6 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce Profissional',
-      category: 'ecommerce',
-      description: 'Loja virtual completa com design responsivo, performance otimizada e integração de pagamentos',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      results: ['Performance otimizada', 'Design responsivo', 'SEO integrado', 'Pagamentos seguros'],
-      icon: ShoppingCart,
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      id: 2,
       title: 'Sistema Web Personalizado',
       category: 'webapp',
       description: 'Sistema web sob medida para gestão empresarial com interface intuitiva e funcionalidades avançadas',
@@ -32,7 +22,7 @@ const Portfolio = () => {
       color: 'from-emerald-500 to-green-500'
     },
     {
-      id: 3,
+      id: 2,
       title: 'Landing Page Profissional',
       category: 'landing',
       description: 'Página de conversão otimizada com design focado em resultados e alta taxa de conversão',
@@ -42,7 +32,7 @@ const Portfolio = () => {
       color: 'from-green-600 to-emerald-600'
     },
     {
-      id: 4,
+      id: 3,
       title: 'Site WordPress Customizado',
       category: 'wordpress',
       description: 'Site WordPress profissional com tema customizado, plugins específicos e otimização completa',
@@ -243,6 +233,10 @@ const Portfolio = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
         >
           <motion.button
+            onClick={() => {
+              const form = document.getElementById('formulario-contato');
+              if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
             className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-6 px-12 rounded-2xl text-xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
