@@ -2,46 +2,106 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ExternalLink, ArrowRight, Code, Globe, Smartphone, ShoppingCart } from 'lucide-react'
+import { ExternalLink, ArrowRight, Code, Globe, Smartphone, Zap, Database, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState } from 'react'
 
 const Portfolio = () => {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
   })
+  
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [activeTab, setActiveTab] = useState('institucional')
 
   const projects = [
+    // Sites Institucionais
     {
       id: 1,
-      title: 'Sistema Web Personalizado',
-      category: 'webapp',
-      description: 'Sistema web sob medida para gestão empresarial com interface intuitiva e funcionalidades avançadas',
-      technologies: ['Next.js', 'TypeScript', 'MongoDB', 'AWS'],
-      results: ['Interface intuitiva', 'Funcionalidades completas', 'Segurança avançada', 'Escalabilidade'],
-      icon: Code,
-      color: 'from-emerald-500 to-green-500'
+      title: 'Site Institucional - Plataforma de Indicação',
+      category: 'institucional',
+      description: 'Site institucional completo para plataforma de indicação de clientes com design moderno e navegação intuitiva',
+      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Google Analytics'],
+      results: ['Design responsivo', 'Performance otimizada', 'SEO otimizado', 'Analytics integrado'],
+      icon: Globe,
+      color: 'from-green-500 to-emerald-500',
+      image: '/images/cases/lp-indicacao.jpg'
     },
     {
-      id: 2,
-      title: 'Landing Page Profissional',
-      category: 'landing',
-      description: 'Página de conversão otimizada com design focado em resultados e alta taxa de conversão',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Google Analytics'],
-      results: ['Alta conversão', 'Design profissional', 'Performance otimizada', 'Analytics integrado'],
+      id: 6,
+      title: 'Site Institucional - Plataforma de LinkedIn IA',
+      category: 'institucional',
+      description: 'Site institucional para plataforma de geração de conteúdo com IA para LinkedIn com foco em conversão e credibilidade',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      results: ['Design moderno', 'Performance alta', 'SEO otimizado', 'Conversão otimizada'],
       icon: Globe,
-      color: 'from-green-600 to-emerald-600'
+      color: 'from-emerald-500 to-green-500',
+      image: null
+    },
+    {
+      id: 7,
+      title: 'Site Institucional - Plataforma Agendamento de Consultas',
+      category: 'institucional',
+      description: 'Site institucional para plataforma de agendamento de consultas médicas com design profissional e confiável',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      results: ['Design profissional', 'Interface intuitiva', 'Integração de pagamentos', 'Responsivo'],
+      icon: Globe,
+      color: 'from-green-600 to-emerald-600',
+      image: null
+    },
+    // Sistemas Web
+    {
+      id: 2,
+      title: 'Plataforma de Indicação de Clientes',
+      category: 'webapp',
+      description: 'Sistema completo para gestão de programas de indicação com dashboard, comissões e relatórios avançados',
+      technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'AWS'],
+      results: ['Dashboard completo', 'Gestão de comissões', 'Relatórios detalhados', 'Escalabilidade'],
+      icon: Code,
+      color: 'from-emerald-500 to-green-500',
+      image: '/images/cases/plataforma-indicacao.jpg'
     },
     {
       id: 3,
-      title: 'Site WordPress Customizado',
-      category: 'wordpress',
-      description: 'Site WordPress profissional com tema customizado, plugins específicos e otimização completa',
-      technologies: ['WordPress', 'PHP', 'MySQL', 'Custom Theme'],
-      results: ['Tema personalizado', 'Performance otimizada', 'SEO avançado', 'Fácil manutenção'],
-      icon: Code,
-      color: 'from-emerald-600 to-green-600'
+      title: 'Cardápio Digital Interativo',
+      category: 'webapp',
+      description: 'Sistema de cardápio digital com QR Code, gestão de produtos e pedidos online integrado',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      results: ['Interface intuitiva', 'QR Code integrado', 'Gestão de pedidos', 'Pagamentos online'],
+      icon: Smartphone,
+      color: 'from-green-600 to-emerald-600',
+      image: null
+    },
+    {
+      id: 4,
+      title: 'Plataforma de Posts IA - LinkedIn',
+      category: 'webapp',
+      description: 'Sistema de geração automática de posts para LinkedIn usando inteligência artificial',
+      technologies: ['Next.js', 'OpenAI API', 'PostgreSQL', 'Vercel'],
+      results: ['IA integrada', 'Posts automáticos', 'Agendamento', 'Analytics de engajamento'],
+      icon: Zap,
+      color: 'from-emerald-600 to-green-600',
+      image: null
+    },
+    {
+      id: 5,
+      title: 'Plataforma de Posts Blog IA',
+      category: 'webapp',
+      description: 'Sistema para criação automática de artigos de blog usando inteligência artificial',
+      technologies: ['React', 'OpenAI API', 'MongoDB', 'AWS'],
+      results: ['Conteúdo automático', 'SEO otimizado', 'Agendamento', 'Gestão de conteúdo'],
+      icon: Database,
+      color: 'from-green-700 to-emerald-700',
+      image: null
     }
   ]
+
+  // Filtrar projetos por categoria
+  const institucionalProjects = projects.filter(p => p.category === 'institucional')
+  const webappProjects = projects.filter(p => p.category === 'webapp')
+  const currentProjects = activeTab === 'institucional' ? institucionalProjects : webappProjects
+  
+  const itemsPerView = 3 // Desktop: 3 cards, Mobile: 1 card
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden" ref={ref}>
@@ -73,7 +133,7 @@ const Portfolio = () => {
         ></motion.div>
       </div>
 
-      <div className="container relative z-10">
+      <div className="relative z-10 w-full px-8">
         {/* Header - Minimalist */}
         <motion.div 
           className="text-center mb-20"
@@ -82,147 +142,196 @@ const Portfolio = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            Projetos <span className="text-green-400">Web</span>
+            <span className="text-green-400">Projetos</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Exemplos de soluções que desenvolvemos para diferentes tipos de negócios
+            Projetos reais que desenvolvemos e os resultados alcançados para nossos clientes
           </p>
         </motion.div>
 
-        {/* Projects - Creative Layout */}
-        <div className="space-y-24">
-          {projects.map((project, index) => {
-            const IconComponent = project.icon
-            const isEven = index % 2 === 0
-            
-            return (
-              <motion.div
-                key={project.id}
-                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.3 }}
-              >
-                {/* Visual Element */}
-                <div className="flex-1 flex justify-center">
-                  <motion.div 
-                    className="relative w-96 h-96"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.8, delay: index * 0.3 + 0.2 }}
-                    whileHover={{ scale: 1.05 }}
+        {/* Tabs */}
+        <motion.div 
+          className="flex justify-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-2 border border-gray-700/50">
+            <button
+              onClick={() => {
+                setActiveTab('institucional')
+                setCurrentIndex(0)
+              }}
+              className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                activeTab === 'institucional'
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+              }`}
+            >
+              Sites Institucionais
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab('webapp')
+                setCurrentIndex(0)
+              }}
+              className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                activeTab === 'webapp'
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+              }`}
+            >
+              Sistemas Web
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Projects Carousel */}
+        <div className="relative w-full">
+          {/* Carousel Container */}
+          <div className="overflow-hidden w-full">
+            <motion.div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+            >
+              {currentProjects.map((project, index) => {
+                const IconComponent = project.icon
+                
+                return (
+                  <motion.div
+                    key={project.id}
+                    className="w-full md:w-1/3 px-6 flex-shrink-0"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    {/* Background Glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} rounded-3xl opacity-20 blur-2xl`}></div>
-                    
-                    {/* Main Card */}
-                    <div className="relative w-full h-full bg-black/50 backdrop-blur-sm rounded-3xl border border-green-500/20 overflow-hidden">
-                      {/* Mockup Content */}
-                      <div className="p-8 h-full flex flex-col justify-between">
-                        <div className="flex items-center justify-between mb-6">
-                          <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center`}>
-                            <IconComponent className="w-6 h-6 text-white" />
-                          </div>
-                          <div className="text-green-400 text-sm font-mono">DEMO</div>
+                    <div className="bg-black/50 backdrop-blur-sm rounded-3xl p-8 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 h-full group">
+                      {/* Project Image Section */}
+                      <div className="relative mb-8 overflow-hidden rounded-2xl">
+                        <div className="relative h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center p-4">
+                          {/* Project Image */}
+                          {project.image ? (
+                            <img 
+                              src={project.image} 
+                              alt={project.title}
+                              className="absolute inset-0 w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                            />
+                          ) : (
+                            <>
+                              {/* Placeholder for project image */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20"></div>
+                              <div className="relative z-10 text-center">
+                                <div className={`w-20 h-20 bg-gradient-to-br ${project.color} rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                                  <IconComponent className="w-10 h-10 text-white" />
+                                </div>
+                                <p className="text-gray-400 text-sm">Screenshot do Projeto</p>
+                              </div>
+                            </>
+                          )}
                         </div>
                         
-                        <div className="space-y-4">
-                          <div className="h-3 bg-gray-700 rounded w-3/4"></div>
-                          <div className="h-3 bg-gray-700 rounded w-1/2"></div>
-                          <div className="h-3 bg-gray-700 rounded w-2/3"></div>
+                        {/* Category Badge */}
+                        <div className="absolute top-4 right-4 bg-green-500 text-black text-sm font-bold px-3 py-1 rounded-full shadow-lg">
+                          {project.category === 'institucional' ? 'Site Institucional' : 'Sistema Web'}
+                        </div>
+                      </div>
+                      
+                      {/* Project Info */}
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-green-400 transition-colors">
+                            {project.title}
+                          </h3>
+                          
+                          <p className="text-gray-300 leading-relaxed">
+                            {project.description}
+                          </p>
                         </div>
                         
-                        <div className="mt-auto">
-                          <div className="flex space-x-2">
-                            <div className="w-8 h-8 bg-green-500 rounded-full"></div>
-                            <div className="w-8 h-8 bg-emerald-500 rounded-full"></div>
-                            <div className="w-8 h-8 bg-green-600 rounded-full"></div>
+                        {/* Technologies */}
+                        <div>
+                          <h4 className="text-sm font-semibold text-green-400 mb-3 uppercase tracking-wider">Tecnologias</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                              <span key={techIndex} className="bg-green-500/10 text-green-400 text-sm px-3 py-1 rounded-full border border-green-500/20">
+                                {tech}
+                              </span>
+                            ))}
+                            {project.technologies.length > 4 && (
+                              <span className="bg-gray-500/10 text-gray-400 text-sm px-3 py-1 rounded-full">
+                                +{project.technologies.length - 4}
+                              </span>
+                            )}
                           </div>
                         </div>
+                        
+                        {/* Results */}
+                        <div>
+                          <h4 className="text-sm font-semibold text-green-400 mb-3 uppercase tracking-wider">Resultados</h4>
+                          <div className="space-y-3">
+                            {project.results.slice(0, 3).map((result, resultIndex) => (
+                              <div key={resultIndex} className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span className="text-gray-300">{result}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        {/* CTA */}
+                        {project.id === 1 ? (
+                          <a 
+                            href="https://virallead.com.br/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 group-hover:shadow-lg group-hover:shadow-green-500/25 flex items-center justify-center"
+                          >
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Acessar Site
+                          </a>
+                        ) : (
+                          <button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 group-hover:shadow-lg group-hover:shadow-green-500/25">
+                            Ver Case Completo
+                          </button>
+                        )}
                       </div>
                     </div>
                   </motion.div>
-                </div>
-                
-                {/* Content */}
-                <div className="flex-1 space-y-8">
-                  <div className="space-y-4">
-                    <motion.div 
-                      className="inline-flex items-center space-x-3"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={inView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.6, delay: index * 0.3 + 0.4 }}
-                    >
-                      <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center`}>
-                        <IconComponent className="w-6 h-6 text-white" />
-                      </div>
-                      <span className="text-green-400 text-sm font-medium tracking-wider uppercase">
-                        Projeto {String(index + 1).padStart(2, '0')}
-                      </span>
-                    </motion.div>
-                    
-                    <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                      {project.title}
-                    </h3>
-                    
-                    <p className="text-xl text-gray-300 leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
-                  
-                  {/* Technologies */}
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-white">Tecnologias:</h4>
-                    <div className="flex flex-wrap gap-3">
-                      {project.technologies.map((tech, techIndex) => (
-                        <motion.span
-                          key={techIndex}
-                          className="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium border border-green-500/30"
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={inView ? { opacity: 1, scale: 1 } : {}}
-                          transition={{ duration: 0.4, delay: index * 0.3 + 0.6 + techIndex * 0.1 }}
-                        >
-                          {tech}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Results */}
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-white">Características:</h4>
-                    <div className="grid grid-cols-1 gap-3">
-                      {project.results.map((result, resultIndex) => (
-                        <motion.div
-                          key={resultIndex}
-                          className="flex items-center space-x-3"
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={inView ? { opacity: 1, x: 0 } : {}}
-                          transition={{ duration: 0.4, delay: index * 0.3 + 0.8 + resultIndex * 0.1 }}
-                        >
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-gray-300">{result}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <motion.button
-                    className="inline-flex items-center space-x-3 bg-transparent border-2 border-green-500 text-green-400 px-8 py-4 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-all duration-300 group"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: index * 0.3 + 1 }}
-                  >
-                    <span>Ver detalhes</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </motion.button>
-                </div>
-              </motion.div>
-            )
-          })}
+                )
+              })}
+            </motion.div>
+          </div>
+          
+          {/* Navigation Arrows */}
+          <button
+            onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
+            disabled={currentIndex === 0}
+            className="absolute left-8 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/50 backdrop-blur-sm border border-green-500/20 rounded-full flex items-center justify-center text-green-400 hover:text-white hover:border-green-500/40 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+          >
+            <ChevronLeft className="w-7 h-7" />
+          </button>
+          
+          <button
+            onClick={() => setCurrentIndex(Math.min(Math.ceil(currentProjects.length / itemsPerView) - 1, currentIndex + 1))}
+            disabled={currentIndex >= Math.ceil(currentProjects.length / itemsPerView) - 1}
+            className="absolute right-8 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/50 backdrop-blur-sm border border-green-500/20 rounded-full flex items-center justify-center text-green-400 hover:text-white hover:border-green-500/40 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+          >
+            <ChevronRight className="w-7 h-7" />
+          </button>
+          
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {Array.from({ length: Math.ceil(currentProjects.length / itemsPerView) }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                  index === currentIndex ? 'bg-green-400' : 'bg-gray-600'
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Bottom CTA */}
