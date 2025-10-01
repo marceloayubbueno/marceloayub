@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { CheckCircle, Clock, DollarSign, Calendar, Download, MessageCircle, ArrowRight, Globe, Code, ShoppingCart, Zap } from 'lucide-react'
@@ -365,7 +365,21 @@ const BriefingResultado = () => {
   )
 }
 
-export default BriefingResultado
+// Wrapper com Suspense para o useSearchParams
+export default function BriefingResultadoPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-500 mx-auto mb-4"></div>
+          <p className="text-white text-xl">Carregando orçamento...</p>
+        </div>
+      </div>
+    }>
+      <BriefingResultado />
+    </Suspense>
+  )
+}
 
 
 
