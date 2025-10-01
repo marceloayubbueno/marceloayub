@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         {/* Google Analytics */}
@@ -29,7 +29,7 @@ export default function RootLayout({
         }} />
         {/* Meta Pixel será controlado por componente client-side */}
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <div className="min-h-screen bg-white">
           {children}
         </div>

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Check, Star, Zap, ArrowRight } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 const ModernPricing = () => {
   const { ref, inView } = useInView({
@@ -11,6 +11,7 @@ const ModernPricing = () => {
     triggerOnce: true,
   })
   const router = useRouter()
+  const pathname = usePathname()
 
   return (
     <section id="pricing" className="py-20 bg-gradient-to-br from-gray-900 to-black text-white" ref={ref}>
@@ -65,7 +66,7 @@ const ModernPricing = () => {
               }}
             />
             
-            {typeof window !== 'undefined' && window.location.pathname === '/testegratis' ? (
+            {pathname === '/testegratis' ? (
               <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12">
                 <motion.div 
                   className="absolute -top-4 left-1/2 transform -translate-x-1/2"

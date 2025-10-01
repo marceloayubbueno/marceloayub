@@ -16,17 +16,10 @@ const Services = () => {
   const services = [
     {
       icon: Globe,
-      title: 'Sites Institucionais',
-      description: 'Sites profissionais e responsivos que representam sua marca com excelência',
-      features: ['Design responsivo', 'SEO otimizado', 'Performance alta', 'CMS integrado'],
+      title: 'Sites e Landing Pages Profissionais',
+      description: 'Sites institucionais e landing pages de alta conversão para representar sua marca e gerar resultados',
+      features: ['Design responsivo', 'SEO otimizado', 'Foco em conversão', 'Analytics integrado'],
       color: 'from-green-500 to-emerald-500',
-    },
-    {
-      icon: Globe,
-      title: 'Landing Pages Profissionais',
-      description: 'Páginas de conversão otimizadas para maximizar resultados e vendas',
-      features: ['Design focado em conversão', 'A/B Testing', 'Integração com CRM', 'Analytics avançado'],
-      color: 'from-green-600 to-emerald-600',
     },
     {
       icon: Code,
@@ -34,6 +27,13 @@ const Services = () => {
       description: 'Soluções web sob medida para suas necessidades específicas de negócio',
       features: ['Desenvolvimento custom', 'Integrações APIs', 'Relatórios avançados', 'Escalabilidade'],
       color: 'from-emerald-500 to-green-500',
+    },
+    {
+      icon: ShoppingCart,
+      title: 'E-commerce Completo',
+      description: 'Lojas virtuais robustas e escaláveis para vender seus produtos online com máxima performance',
+      features: ['Catálogo de produtos', 'Gateway de pagamento', 'Gestão de pedidos', 'Painel administrativo'],
+      color: 'from-green-600 to-emerald-600',
     },
     {
       icon: Smartphone,

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Target, Users, TrendingUp, ArrowRight, Zap, DollarSign } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 const HowItWorks = () => {
   const { ref, inView } = useInView({
@@ -12,6 +12,7 @@ const HowItWorks = () => {
   })
 
   const router = useRouter()
+  const pathname = usePathname()
 
   const steps = [
     {
@@ -224,7 +225,7 @@ const HowItWorks = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {typeof window !== 'undefined' && window.location.pathname === '/testegratis' ? 'Começar Meu Teste Agora' : 'Começar Meu Programa Agora'}
+            {pathname === '/testegratis' ? 'Começar Meu Teste Agora' : 'Começar Meu Programa Agora'}
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline" />
           </motion.button>
         </motion.div>

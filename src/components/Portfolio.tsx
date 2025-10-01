@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ExternalLink, ArrowRight, Code, Globe, Smartphone, Zap, Database, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ExternalLink, ArrowRight, Code, Globe, Smartphone, Zap, Database, ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 
 const Portfolio = () => {
@@ -93,13 +93,37 @@ const Portfolio = () => {
       icon: Database,
       color: 'from-green-700 to-emerald-700',
       image: null
+    },
+    // E-commerce
+    {
+      id: 8,
+      title: 'E-commerce de Games e Tecnologia',
+      category: 'ecommerce',
+      description: 'Loja virtual completa para venda de produtos gamer e tecnologia com catálogo dinâmico, carrinho e pagamentos integrados',
+      technologies: ['Next.js', 'Stripe', 'PostgreSQL', 'Tailwind CSS'],
+      results: ['Catálogo completo', 'Pagamentos seguros', 'Gestão de estoque', 'Dashboard administrativo'],
+      icon: ShoppingCart,
+      color: 'from-green-600 to-emerald-600',
+      image: '/images/cases/ecommerce.png'
+    },
+    {
+      id: 9,
+      title: 'E-commerce de Produtos Digitais',
+      category: 'ecommerce',
+      description: 'Plataforma de venda de produtos digitais com entrega automática e área de membros exclusiva',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Mercado Pago'],
+      results: ['Download automático', 'Sistema de afiliados', 'Área de membros', 'Relatórios de vendas'],
+      icon: Zap,
+      color: 'from-emerald-600 to-green-600',
+      image: null
     }
   ]
 
   // Filtrar projetos por categoria
   const institucionalProjects = projects.filter(p => p.category === 'institucional')
   const webappProjects = projects.filter(p => p.category === 'webapp')
-  const currentProjects = activeTab === 'institucional' ? institucionalProjects : webappProjects
+  const ecommerceProjects = projects.filter(p => p.category === 'ecommerce')
+  const currentProjects = activeTab === 'institucional' ? institucionalProjects : activeTab === 'webapp' ? webappProjects : ecommerceProjects
   
   const itemsPerView = 3 // Desktop: 3 cards, Mobile: 1 card
 
@@ -184,6 +208,19 @@ const Portfolio = () => {
             >
               Sistemas Web
             </button>
+            <button
+              onClick={() => {
+                setActiveTab('ecommerce')
+                setCurrentIndex(0)
+              }}
+              className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                activeTab === 'ecommerce'
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+              }`}
+            >
+              E-commerce
+            </button>
           </div>
         </motion.div>
 
@@ -233,7 +270,7 @@ const Portfolio = () => {
                         
                         {/* Category Badge */}
                         <div className="absolute top-4 right-4 bg-green-500 text-black text-sm font-bold px-3 py-1 rounded-full shadow-lg">
-                          {project.category === 'institucional' ? 'Site Institucional' : 'Sistema Web'}
+                          {project.category === 'institucional' ? 'Site Institucional' : project.category === 'webapp' ? 'Sistema Web' : 'E-commerce'}
                         </div>
                       </div>
                       

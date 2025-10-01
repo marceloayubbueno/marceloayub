@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 const ModernFooter = () => {
   const router = useRouter()
+  const pathname = usePathname()
 
   return (
     <footer className="bg-black text-white py-16">
@@ -29,7 +30,7 @@ const ModernFooter = () => {
           
           <motion.button
             onClick={() => {
-              if (typeof window !== 'undefined' && window.location.pathname === '/testegratis') {
+              if (pathname === '/testegratis') {
                 const form = document.getElementById('form-testegratis');
                 if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
               } else {
@@ -41,7 +42,7 @@ const ModernFooter = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {typeof window !== 'undefined' && window.location.pathname === '/testegratis' ? 'Começar Meu Teste Agora' : 'Começar Agora'}
+            {pathname === '/testegratis' ? 'Começar Meu Teste Agora' : 'Começar Agora'}
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline" />
           </motion.button>
         </motion.div>

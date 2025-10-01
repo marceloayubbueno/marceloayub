@@ -36,13 +36,40 @@ const ChatBotForm = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setUserData((prev) => ({ ...prev, [name]: value }));
+    
+    // Formatar telefone automaticamente
+    if (name === 'telefone') {
+      const numbers = value.replace(/\D/g, '');
+      let formatted = numbers;
+      
+      if (numbers.length > 0) {
+        formatted = '(' + numbers.substring(0, 2);
+        if (numbers.length > 2) {
+          formatted += ') ' + numbers.substring(2, 7);
+        }
+        if (numbers.length > 7) {
+          formatted += '-' + numbers.substring(7, 11);
+        }
+      }
+      
+      setUserData((prev) => ({ ...prev, [name]: formatted }));
+    } else {
+      setUserData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     setError('');
+    
+    // Validar telefone (deve ter 11 dígitos)
+    const phoneNumbers = userData.telefone.replace(/\D/g, '');
+    if (phoneNumbers.length < 11) {
+      setError('Telefone inválido. Digite um número completo com DDD.');
+      setIsSending(false);
+      return;
+    }
     
     try {
       const formData = new FormData();
@@ -94,10 +121,14 @@ const ChatBotForm = () => {
       <input
         type="tel"
         name="telefone"
-        placeholder="Telefone (WhatsApp)"
+        placeholder="(00) 00000-0000"
         value={userData.telefone}
         onChange={handleChange}
         required
+        minLength={15}
+        maxLength={15}
+        pattern="\(\d{2}\) \d{5}-\d{4}"
+        title="Digite um telefone válido com DDD (11 dígitos)"
         className="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       />
       <input

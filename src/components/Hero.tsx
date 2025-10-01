@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import CountUp from 'react-countup'
 import { Code, Terminal, Cpu, Database, ArrowRight, Play, Star, Zap, CheckCircle, Github, ExternalLink } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 const Hero = () => {
   const { ref, inView } = useInView({
@@ -13,6 +13,7 @@ const Hero = () => {
   })
 
   const router = useRouter()
+  const pathname = usePathname()
 
   const stats = [
     { number: '150+', label: 'Projetos desenvolvidos', icon: Code },
@@ -141,7 +142,7 @@ const Hero = () => {
             >
               <motion.button
                 onClick={() => {
-                  if (typeof window !== 'undefined' && window.location.pathname === '/testegratis') {
+                  if (pathname === '/testegratis') {
                     const form = document.getElementById('form-testegratis');
                     if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
                   } else {
