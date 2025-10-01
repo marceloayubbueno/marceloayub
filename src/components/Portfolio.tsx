@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ExternalLink, ArrowRight, Code, Globe, Zap, Database, ShoppingCart, ChevronLeft, ChevronRight, Workflow } from 'lucide-react'
+import { ExternalLink, ArrowRight, Code, Globe, Zap, Database, ShoppingCart, ChevronLeft, ChevronRight, Workflow, Smartphone } from 'lucide-react'
 import { useState } from 'react'
 
 const Portfolio = () => {
@@ -38,6 +38,17 @@ const Portfolio = () => {
       color: 'from-emerald-500 to-green-500',
       image: null
     },
+    {
+      id: 7,
+      title: 'Site Institucional - Plataforma Agendamento de Consultas',
+      category: 'institucional',
+      description: 'Site institucional para plataforma de agendamento de consultas médicas com design profissional',
+      technologies: ['React', 'Node.js', 'MongoDB'],
+      results: ['Design profissional', 'Interface intuitiva', 'Integração de pagamentos'],
+      icon: Globe,
+      color: 'from-green-600 to-emerald-600',
+      image: null
+    },
     // Sistemas Web
     {
       id: 2,
@@ -52,6 +63,17 @@ const Portfolio = () => {
     },
     {
       id: 3,
+      title: 'Cardápio Digital Interativo',
+      category: 'webapp',
+      description: 'Sistema de cardápio digital com QR Code, gestão de produtos e pedidos online integrado',
+      technologies: ['React', 'Node.js', 'MongoDB'],
+      results: ['Interface intuitiva', 'QR Code integrado', 'Gestão de pedidos'],
+      icon: Smartphone,
+      color: 'from-green-600 to-emerald-600',
+      image: null
+    },
+    {
+      id: 4,
       title: 'Plataforma de Posts IA - LinkedIn',
       category: 'webapp',
       description: 'Sistema de geração automática de posts para LinkedIn usando inteligência artificial',
@@ -95,6 +117,17 @@ const Portfolio = () => {
       icon: ShoppingCart,
       color: 'from-green-600 to-emerald-600',
       image: '/images/cases/ecommerce.png'
+    },
+    {
+      id: 9,
+      title: 'E-commerce de Produtos Digitais',
+      category: 'ecommerce',
+      description: 'Plataforma de venda de produtos digitais com entrega automática e área de membros',
+      technologies: ['React', 'Node.js', 'MongoDB'],
+      results: ['Download automático', 'Sistema de afiliados', 'Área de membros'],
+      icon: Zap,
+      color: 'from-emerald-600 to-green-600',
+      image: null
     }
   ]
 
