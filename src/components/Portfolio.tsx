@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ExternalLink, ArrowRight, Code, Globe, Smartphone, Zap, Database, ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ExternalLink, ArrowRight, Code, Globe, Zap, Database, ShoppingCart, ChevronLeft, ChevronRight, Workflow } from 'lucide-react'
 import { useState } from 'react'
 
 const Portfolio = () => {
@@ -21,8 +21,8 @@ const Portfolio = () => {
       title: 'Site Institucional - Plataforma de Indicação',
       category: 'institucional',
       description: 'Site institucional completo para plataforma de indicação de clientes com design moderno e navegação intuitiva',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Google Analytics'],
-      results: ['Design responsivo', 'Performance otimizada', 'SEO otimizado', 'Analytics integrado'],
+      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      results: ['Design responsivo', 'Performance otimizada', 'SEO otimizado'],
       icon: Globe,
       color: 'from-green-500 to-emerald-500',
       image: '/images/cases/lp-indicacao.jpg'
@@ -31,22 +31,11 @@ const Portfolio = () => {
       id: 6,
       title: 'Site Institucional - Plataforma de LinkedIn IA',
       category: 'institucional',
-      description: 'Site institucional para plataforma de geração de conteúdo com IA para LinkedIn com foco em conversão e credibilidade',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      results: ['Design moderno', 'Performance alta', 'SEO otimizado', 'Conversão otimizada'],
+      description: 'Site institucional para plataforma de geração de conteúdo com IA para LinkedIn com foco em conversão',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      results: ['Design moderno', 'Performance alta', 'Conversão otimizada'],
       icon: Globe,
       color: 'from-emerald-500 to-green-500',
-      image: null
-    },
-    {
-      id: 7,
-      title: 'Site Institucional - Plataforma Agendamento de Consultas',
-      category: 'institucional',
-      description: 'Site institucional para plataforma de agendamento de consultas médicas com design profissional e confiável',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      results: ['Design profissional', 'Interface intuitiva', 'Integração de pagamentos', 'Responsivo'],
-      icon: Globe,
-      color: 'from-green-600 to-emerald-600',
       image: null
     },
     // Sistemas Web
@@ -54,44 +43,45 @@ const Portfolio = () => {
       id: 2,
       title: 'Plataforma de Indicação de Clientes',
       category: 'webapp',
-      description: 'Sistema completo para gestão de programas de indicação com dashboard, comissões e relatórios avançados',
-      technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'AWS'],
-      results: ['Dashboard completo', 'Gestão de comissões', 'Relatórios detalhados', 'Escalabilidade'],
+      description: 'Sistema completo para gestão de programas de indicação com dashboard e comissões',
+      technologies: ['Next.js', 'TypeScript', 'PostgreSQL'],
+      results: ['Dashboard completo', 'Gestão de comissões', 'Relatórios detalhados'],
       icon: Code,
       color: 'from-emerald-500 to-green-500',
       image: '/images/cases/plataforma-indicacao.jpg'
     },
     {
       id: 3,
-      title: 'Cardápio Digital Interativo',
-      category: 'webapp',
-      description: 'Sistema de cardápio digital com QR Code, gestão de produtos e pedidos online integrado',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      results: ['Interface intuitiva', 'QR Code integrado', 'Gestão de pedidos', 'Pagamentos online'],
-      icon: Smartphone,
-      color: 'from-green-600 to-emerald-600',
-      image: null
-    },
-    {
-      id: 4,
       title: 'Plataforma de Posts IA - LinkedIn',
       category: 'webapp',
       description: 'Sistema de geração automática de posts para LinkedIn usando inteligência artificial',
-      technologies: ['Next.js', 'OpenAI API', 'PostgreSQL', 'Vercel'],
-      results: ['IA integrada', 'Posts automáticos', 'Agendamento', 'Analytics de engajamento'],
+      technologies: ['Next.js', 'OpenAI API', 'PostgreSQL'],
+      results: ['IA integrada', 'Posts automáticos', 'Agendamento'],
       icon: Zap,
       color: 'from-emerald-600 to-green-600',
       image: null
     },
+    // Automações
     {
-      id: 5,
-      title: 'Plataforma de Posts Blog IA',
-      category: 'webapp',
-      description: 'Sistema para criação automática de artigos de blog usando inteligência artificial',
-      technologies: ['React', 'OpenAI API', 'MongoDB', 'AWS'],
-      results: ['Conteúdo automático', 'SEO otimizado', 'Agendamento', 'Gestão de conteúdo'],
-      icon: Database,
-      color: 'from-green-700 to-emerald-700',
+      id: 10,
+      title: 'Automação de Marketing Digital',
+      category: 'automacao',
+      description: 'Sistema completo de automação para campanhas de marketing digital com N8N',
+      technologies: ['N8N', 'Webhooks', 'APIs', 'Integrações'],
+      results: ['Campanhas automáticas', 'Lead nurturing', 'Relatórios em tempo real'],
+      icon: Workflow,
+      color: 'from-green-500 to-emerald-500',
+      image: null
+    },
+    {
+      id: 11,
+      title: 'Automação de E-commerce',
+      category: 'automacao',
+      description: 'Automações para gestão de estoque, pedidos e atendimento ao cliente',
+      technologies: ['N8N', 'Shopify API', 'WhatsApp API', 'Email Marketing'],
+      results: ['Gestão automática', 'Atendimento 24/7', 'Redução de erros'],
+      icon: Workflow,
+      color: 'from-emerald-500 to-green-500',
       image: null
     },
     // E-commerce
@@ -99,23 +89,12 @@ const Portfolio = () => {
       id: 8,
       title: 'E-commerce de Games e Tecnologia',
       category: 'ecommerce',
-      description: 'Loja virtual completa para venda de produtos gamer e tecnologia com catálogo dinâmico, carrinho e pagamentos integrados',
-      technologies: ['Next.js', 'Stripe', 'PostgreSQL', 'Tailwind CSS'],
-      results: ['Catálogo completo', 'Pagamentos seguros', 'Gestão de estoque', 'Dashboard administrativo'],
+      description: 'Loja virtual completa para venda de produtos gamer e tecnologia com catálogo dinâmico',
+      technologies: ['Next.js', 'Stripe', 'PostgreSQL'],
+      results: ['Catálogo completo', 'Pagamentos seguros', 'Gestão de estoque'],
       icon: ShoppingCart,
       color: 'from-green-600 to-emerald-600',
       image: '/images/cases/ecommerce.png'
-    },
-    {
-      id: 9,
-      title: 'E-commerce de Produtos Digitais',
-      category: 'ecommerce',
-      description: 'Plataforma de venda de produtos digitais com entrega automática e área de membros exclusiva',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Mercado Pago'],
-      results: ['Download automático', 'Sistema de afiliados', 'Área de membros', 'Relatórios de vendas'],
-      icon: Zap,
-      color: 'from-emerald-600 to-green-600',
-      image: null
     }
   ]
 
@@ -123,7 +102,8 @@ const Portfolio = () => {
   const institucionalProjects = projects.filter(p => p.category === 'institucional')
   const webappProjects = projects.filter(p => p.category === 'webapp')
   const ecommerceProjects = projects.filter(p => p.category === 'ecommerce')
-  const currentProjects = activeTab === 'institucional' ? institucionalProjects : activeTab === 'webapp' ? webappProjects : ecommerceProjects
+  const automacaoProjects = projects.filter(p => p.category === 'automacao')
+  const currentProjects = activeTab === 'institucional' ? institucionalProjects : activeTab === 'webapp' ? webappProjects : activeTab === 'ecommerce' ? ecommerceProjects : automacaoProjects
   
   const itemsPerView = 3 // Desktop: 3 cards, Mobile: 1 card
 
@@ -221,6 +201,19 @@ const Portfolio = () => {
             >
               E-commerce
             </button>
+            <button
+              onClick={() => {
+                setActiveTab('automacao')
+                setCurrentIndex(0)
+              }}
+              className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                activeTab === 'automacao'
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+              }`}
+            >
+              Automações
+            </button>
           </div>
         </motion.div>
 
@@ -270,7 +263,7 @@ const Portfolio = () => {
                         
                         {/* Category Badge */}
                         <div className="absolute top-4 right-4 bg-green-500 text-black text-sm font-bold px-3 py-1 rounded-full shadow-lg">
-                          {project.category === 'institucional' ? 'Site Institucional' : project.category === 'webapp' ? 'Sistema Web' : 'E-commerce'}
+                          {project.category === 'institucional' ? 'Site Institucional' : project.category === 'webapp' ? 'Sistema Web' : project.category === 'ecommerce' ? 'E-commerce' : 'Automação'}
                         </div>
                       </div>
                       
@@ -290,14 +283,14 @@ const Portfolio = () => {
                         <div>
                           <h4 className="text-sm font-semibold text-green-400 mb-3 uppercase tracking-wider">Tecnologias</h4>
                           <div className="flex flex-wrap gap-2">
-                            {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                            {project.technologies.slice(0, 3).map((tech, techIndex) => (
                               <span key={techIndex} className="bg-green-500/10 text-green-400 text-sm px-3 py-1 rounded-full border border-green-500/20">
                                 {tech}
                               </span>
                             ))}
-                            {project.technologies.length > 4 && (
+                            {project.technologies.length > 3 && (
                               <span className="bg-gray-500/10 text-gray-400 text-sm px-3 py-1 rounded-full">
-                                +{project.technologies.length - 4}
+                                +{project.technologies.length - 3}
                               </span>
                             )}
                           </div>
@@ -307,7 +300,7 @@ const Portfolio = () => {
                         <div>
                           <h4 className="text-sm font-semibold text-green-400 mb-3 uppercase tracking-wider">Resultados</h4>
                           <div className="space-y-3">
-                            {project.results.slice(0, 3).map((result, resultIndex) => (
+                            {project.results.map((result, resultIndex) => (
                               <div key={resultIndex} className="flex items-center space-x-3">
                                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                                 <span className="text-gray-300">{result}</span>
@@ -387,7 +380,7 @@ const Portfolio = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Quero meu projeto aqui
+            Falar com Especialista
             <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform inline" />
           </motion.button>
         </motion.div>

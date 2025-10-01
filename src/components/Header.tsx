@@ -44,7 +44,7 @@ const Header = () => {
                 <div className="absolute top-full left-0 mt-2 w-48 bg-gray-800 shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-700">
                   <Link href="#services" className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Sites</Link>
                   <Link href="#services" className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">E-commerce</Link>
-                  <Link href="#services" className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Apps Mobile</Link>
+                  <Link href="#services" className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Automações</Link>
                   <Link href="#services" className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">Sistemas</Link>
                 </div>
               </div>

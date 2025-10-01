@@ -102,9 +102,7 @@ const ModernPricing = () => {
                       'Cronograma detalhado',
                       'Orçamento personalizado',
                       'Tecnologias recomendadas', 
-                      'Suporte técnico',
-                      'Consultoria especializada',
-                      'Relatório executivo'
+                      'Consultoria especializada'
                     ].map((feature, index) => (
                       <motion.div
                         key={index}
@@ -177,12 +175,10 @@ const ModernPricing = () => {
                     {[
                       'Sites responsivos',
                       'E-commerce completo',
-                      'Aplicações mobile',
+                      'Automações inteligentes',
                       'Sistemas personalizados',
-                      'Manutenção e suporte', 
                       'Consultoria técnica',
-                      'SEO e performance',
-                      'Integrações avançadas'
+                      'SEO e performance'
                     ].map((feature, index) => (
                       <motion.div
                         key={index}
@@ -266,8 +262,8 @@ const ModernPricing = () => {
                 a: "Depende da complexidade. Sites institucionais simples levam 2-4 semanas, e-commerces 4-8 semanas, e sistemas personalizados podem levar 2-6 meses."
               },
               {
-                q: "Vocês oferecem manutenção após a entrega?",
-                a: "Sim! Oferecemos pacotes de manutenção mensal que incluem atualizações, backups, monitoramento e suporte técnico contínuo."
+                q: "Vocês oferecem suporte após a entrega?",
+                a: "Sim! Oferecemos suporte técnico contínuo e treinamento para que você possa gerenciar seu projeto com autonomia."
               },
               {
                 q: "Posso acompanhar o desenvolvimento do projeto?",

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Code, Globe, Smartphone, ShoppingCart, Database, Zap, ArrowRight } from 'lucide-react'
+import { Code, Globe, ShoppingCart, Database, Zap, ArrowRight, Workflow } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 const Services = () => {
@@ -16,38 +16,31 @@ const Services = () => {
   const services = [
     {
       icon: Globe,
-      title: 'Sites e Landing Pages Profissionais',
-      description: 'Sites institucionais e landing pages de alta conversão para representar sua marca e gerar resultados',
-      features: ['Design responsivo', 'SEO otimizado', 'Foco em conversão', 'Analytics integrado'],
+      title: 'Sites e Landing Pages',
+      description: 'Sites institucionais e landing pages de alta conversão para representar sua marca',
+      features: ['Design responsivo', 'SEO otimizado', 'Foco em conversão'],
       color: 'from-green-500 to-emerald-500',
     },
     {
       icon: Code,
-      title: 'Sistemas Web Personalizados',
+      title: 'Sistemas Web',
       description: 'Soluções web sob medida para suas necessidades específicas de negócio',
-      features: ['Desenvolvimento custom', 'Integrações APIs', 'Relatórios avançados', 'Escalabilidade'],
+      features: ['Desenvolvimento custom', 'Integrações APIs', 'Relatórios avançados'],
       color: 'from-emerald-500 to-green-500',
     },
     {
       icon: ShoppingCart,
-      title: 'E-commerce Completo',
-      description: 'Lojas virtuais robustas e escaláveis para vender seus produtos online com máxima performance',
-      features: ['Catálogo de produtos', 'Gateway de pagamento', 'Gestão de pedidos', 'Painel administrativo'],
+      title: 'E-commerce',
+      description: 'Lojas virtuais robustas e escaláveis para vender seus produtos online',
+      features: ['Catálogo de produtos', 'Gateway de pagamento', 'Gestão de pedidos'],
       color: 'from-green-600 to-emerald-600',
     },
     {
-      icon: Smartphone,
-      title: 'Aplicativos Mobile',
-      description: 'Apps nativos e híbridos para iOS e Android com performance e experiência de usuário excepcionais',
-      features: ['Apps nativos iOS/Android', 'React Native', 'Performance otimizada', 'UX/UI moderna'],
+      icon: Workflow,
+      title: 'Automações Inteligentes',
+      description: 'Automações de processos com N8N para otimizar seu fluxo de trabalho',
+      features: ['Integração de sistemas', 'Workflows automatizados', 'Economia de tempo'],
       color: 'from-green-500 to-emerald-500',
-    },
-    {
-      icon: Zap,
-      title: 'Manutenção & Suporte Web',
-      description: 'Suporte técnico contínuo para manter seus projetos web sempre atualizados',
-      features: ['Atualizações regulares', 'Backup automático', 'Monitoramento 24/7', 'Suporte prioritário'],
-      color: 'from-green-700 to-emerald-700',
     }
   ]
 
@@ -91,7 +84,7 @@ const Services = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            Desenvolvimento <span className="text-green-400">Web</span>
+            Desenvolvimento <span className="text-green-400">Web e Automações</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto"></div>
         </motion.div>
@@ -198,7 +191,7 @@ const Services = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Vamos conversar sobre seu projeto
+            Falar com Especialista
             <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform inline" />
           </motion.button>
         </motion.div>

@@ -107,7 +107,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Zap className="w-4 h-4 mr-2" />
-              Desenvolvimento Web Profissional
+              Desenvolvimento Web e Automações
             </motion.div>
 
             {/* Main Headline */}
@@ -119,7 +119,7 @@ const Hero = () => {
             >
               DESENVOLVIMENTO{' '}
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                WEB PROFISSIONAL
+                WEB E AUTOMAÇÕES
               </span>{' '}
               PARA SEU NEGÓCIO
             </motion.h1>
@@ -131,7 +131,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Sites profissionais, sistemas web, landing pages e projetos WordPress que impulsionam seu negócio digital.
+              Sites profissionais, sistemas web, automações inteligentes e soluções digitais que impulsionam seu negócio.
             </motion.p>
 
             {/* CTA Button */}
@@ -154,7 +154,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Quero uma Solução!
+                Falar com Especialista
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline" />
               </motion.button>
             </motion.div>

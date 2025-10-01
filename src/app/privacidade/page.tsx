@@ -17,7 +17,7 @@ export default function PrivacidadePage() {
             <section>
               <h2 className="text-xl font-semibold mb-4 text-white">1. Informações sobre a Empresa</h2>
               <p className="mb-4 text-gray-200">
-                <strong className="text-green-400">Uixweb</strong> - Desenvolvimento Web Profissional<br/>
+                <strong className="text-green-400">Uixweb</strong> - Desenvolvimento Web e Automações<br/>
                 Especializada em desenvolvimento de sites, sistemas web, landing pages e projetos WordPress customizados.
               </p>
             </section>

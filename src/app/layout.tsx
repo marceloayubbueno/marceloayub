@@ -3,9 +3,9 @@ import './globals.css'
 import PixelAndConsentProvider from '../components/PixelAndConsentProvider';
 
 export const metadata: Metadata = {
-  title: 'Uixweb - Desenvolvimento Web Profissional | Sites, Sistemas Web, Landing Pages e WordPress',
-  description: 'Desenvolvemos sites profissionais, sistemas web personalizados, landing pages de alta conversão e projetos WordPress customizados. Soluções web modernas e otimizadas para impulsionar seu negócio digital.',
-  keywords: 'desenvolvimento web, sites profissionais, sistemas web, landing pages, WordPress, e-commerce, sites responsivos, React, Next.js, PHP, MySQL, agência web',
+  title: 'Uixweb - Desenvolvimento Web e Automações | Sites, Sistemas Web, Automações N8N e E-commerce',
+  description: 'Desenvolvemos sites profissionais, sistemas web personalizados, automações inteligentes com N8N e e-commerce completos. Soluções digitais modernas e otimizadas para impulsionar seu negócio.',
+  keywords: 'desenvolvimento web, automações, sites profissionais, sistemas web, N8N, e-commerce, sites responsivos, React, Next.js, automação de processos, agência web',
 }
 
 export default function RootLayout({
