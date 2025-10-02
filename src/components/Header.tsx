@@ -69,7 +69,7 @@ const Header = () => {
                 Teste Grátis
               </button>
             ) : (
-              <Link href="#" onClick={e => {e.preventDefault(); const form = document.getElementById('formulario-contato'); if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });}} className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200">Solicitar Orçamento</Link>
+              <Link href="https://www.uixweb.com.br/chat" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200">Falar com Especialista</Link>
             )}
           </div>
 

@@ -19,7 +19,7 @@
 }
 
 .chatbotHeader {
-  background: #2563eb;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: #fff;
   padding: 1rem;
   font-weight: bold;
@@ -58,14 +58,14 @@
 }
 
 .chatbotSendButton {
-  background: #2563eb;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 8px;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   align-items: center;
@@ -73,11 +73,12 @@
 }
 
 .chatbotSendButton:hover {
-  background: #1e40af;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-1px);
 }
 
 .userMessage {
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: #fff;
   align-self: flex-end;
   border-radius: 16px 16px 4px 16px;
@@ -110,7 +111,7 @@
 }
 
 .messageButton {
-  background: linear-gradient(135deg, #23232b 0%, #1e40af 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1.1rem;
@@ -118,26 +119,31 @@
   border-radius: 2rem;
   padding: 0.9rem 2.2rem;
   margin: 0.5rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: background 0.2s, transform 0.1s;
+  transition: all 0.3s ease;
 }
 .messageButton:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
   transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 .fullscreen {
-  width: 100vw;
-  height: 100vh;
-  max-width: none;
-  max-height: none;
-  border-radius: 0;
-  box-shadow: none;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  max-height: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 9999 !important;
 }
 
 /* --- RESPONSIVIDADE MOBILE --- */

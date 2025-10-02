@@ -27,7 +27,7 @@ type ChatButton = {
   onClick?: () => void;
 };
 
-const ChatBot = () => {
+const ChatBotFullscreen = () => {
   const [messages, setMessages] = useState<{ text: React.ReactNode; isUser: boolean }[]>([]);
   const [userData, setUserData] = useState(initialUserData);
   const [input, setInput] = useState('');
@@ -39,14 +39,14 @@ const ChatBot = () => {
   const initializedRef = useRef(false);
   const tempDataRef = useRef(initialUserData);
 
-  console.log('ChatBot RENDER', { windowWidth: typeof window !== 'undefined' ? window.innerWidth : 'ssr' });
+  console.log('ChatBotFullscreen RENDER', { windowWidth: typeof window !== 'undefined' ? window.innerWidth : 'ssr' });
 
   useEffect(() => {
     const el = document.querySelector('.' + styles.chatbotContainer.replace(/\./g, ''));
     if (el) {
-      console.log('ChatBot container size:', el.getBoundingClientRect());
+      console.log('ChatBotFullscreen container size:', el.getBoundingClientRect());
     } else {
-      console.log('ChatBot container NOT FOUND');
+      console.log('ChatBotFullscreen container NOT FOUND');
     }
   }, []);
 
@@ -276,7 +276,12 @@ const ChatBot = () => {
   };
 
   return (
-    <div className={styles.chatbotContainer} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div className={`${styles.chatbotContainer} ${styles.fullscreen}`} style={{ 
+      height: '100vh', 
+      width: '100vw',
+      display: 'flex', 
+      flexDirection: 'column'
+    }}>
       {/* Header do Chatbot */}
       <div className={styles.chatbotHeader} style={{ flex: '0 0 auto' }}>
         <span>Uixweb</span>
@@ -338,4 +343,4 @@ const ChatBot = () => {
   );
 };
 
-export default ChatBot; 
+export default ChatBotFullscreen;

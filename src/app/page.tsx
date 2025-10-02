@@ -8,12 +8,12 @@ import Stats from '@/components/Stats'
 import Results from '@/components/Results'
 import ChatBotForm from '@/components/ChatBotForm'
 import ModernFooter from '@/components/ModernFooter'
-// import ChatBot from '@/components/ChatBot' // DESABILITADO
-// import { useState } from 'react' // DESABILITADO
+import ChatBot from '@/components/ChatBot'
+import { useState } from 'react'
 
 export default function Home() {
-  // const [showChat, setShowChat] = useState(false); // DESABILITADO
-  // const mobileStyle = typeof window !== 'undefined' && window.innerWidth <= 600 // DESABILITADO
+  const [showChat, setShowChat] = useState(false);
+  const mobileStyle = typeof window !== 'undefined' && window.innerWidth <= 600
 
   return (
     <main className="overflow-hidden">
@@ -69,92 +69,45 @@ export default function Home() {
         </div>
       </section>
       <ModernFooter />
-      {/* Botão WhatsApp Flutuante */}
-      <div>
-        <a
-          href="https://wa.me/5528998846446"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            position: 'fixed',
-            bottom: '2rem',
-            right: '2rem',
-            zIndex: 1100,
-            background: 'transparent',
-            border: 'none',
-            borderRadius: '50%',
-            width: '64px',
-            height: '64px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textDecoration: 'none',
-            transition: 'transform 0.2s ease',
-          }}
-          aria-label="Falar no WhatsApp"
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.1)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-          }}
-        >
-          <img 
-            src="/whatsapp-icon.png" 
-            alt="WhatsApp" 
-            style={{
-              width: '48px',
-              height: '48px',
-            }}
-          />
-        </a>
-      </div>
 
-      {/* ChatBot Flutuante - DESABILITADO */}
-      {/* 
-      <div>
+      {/* ChatBot Flutuante */}
+      <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 9999 }}>
         <button
           onClick={() => setShowChat((v) => !v)}
           style={{
-            position: 'fixed',
-            bottom: '2rem',
-            right: '2rem',
-            zIndex: 1100, // Aumentado para garantir que fique acima do chat
-            background: '#2563eb',
+            background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
             color: '#fff',
             border: 'none',
             borderRadius: '50%',
-            width: '64px',
-            height: '64px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+            width: '60px',
+            height: '60px',
             cursor: 'pointer',
-            fontSize: '2rem',
+            fontSize: '24px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            boxShadow: '0 4px 16px rgba(16, 185, 129, 0.3)',
+            transition: 'all 0.3s ease',
           }}
-          aria-label={showChat ? 'Fechar chat' : 'Abrir chat'}
         >
           {showChat ? '×' : '💬'}
         </button>
-        {showChat && (
-          <div
-            style={{
-              position: 'fixed',
-              bottom: '8rem',
-              right: '2rem',
-              zIndex: 1000,
-              width: 'auto',
-              ...mobileStyle,
-            }}
-          >
-            <ChatBot />
-          </div>
-        )}
       </div>
-      */}
+      
+      {showChat && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '6rem',
+            right: '2rem',
+            zIndex: 9998,
+            width: '380px',
+            height: '500px',
+          }}
+        >
+          <ChatBot />
+        </div>
+      )}
     </main>
   )
 } 
