@@ -16,27 +16,23 @@ const Results = () => {
   const faqs = [
     {
       question: "Quanto tempo leva para desenvolver um site profissional?",
-      answer: "Depende da complexidade do projeto. Sites institucionais simples levam 2-4 semanas, e-commerces 4-8 semanas, sistemas web personalizados podem levar 2-6 meses, e landing pages profissionais são entregues em 1-2 semanas. Sempre definimos cronogramas realistas no início do projeto."
-    },
-    {
-      question: "Vocês desenvolvem sites WordPress?",
-      answer: "Sim! Desenvolvemos sites WordPress profissionais com temas customizados, plugins específicos, otimização de performance e segurança avançada. Também oferecemos treinamento para que você possa gerenciar seu próprio conteúdo."
+      answer: "Depende da complexidade do projeto. Sites institucionais simples levam 2-4 semanas, e-commerces 4-8 semanas, sistemas web personalizados podem levar 2-6 meses, e landing pages profissionais são entregues em 1-2 semanas. Sempre defino cronogramas realistas no início do projeto."
     },
     {
       question: "Como funciona o desenvolvimento de landing pages?",
-      answer: "Desenvolvemos landing pages focadas em conversão com design otimizado, A/B testing, integração com CRM, analytics avançado e todas as ferramentas necessárias para maximizar seus resultados e vendas."
+      answer: "Desenvolvo landing pages focadas em conversão com design otimizado, A/B testing, integração com CRM, analytics avançado e todas as ferramentas necessárias para maximizar seus resultados e vendas."
     },
     {
-      question: "Quais tecnologias vocês utilizam para desenvolvimento web?",
-      answer: "Trabalhamos com as melhores tecnologias web: React, Next.js, Node.js, TypeScript, WordPress, PHP, MySQL, e muitas outras. Sempre escolhemos a stack mais adequada para cada projeto específico, priorizando performance e segurança."
+      question: "Quais tecnologias você utiliza para desenvolvimento web?",
+      answer: "Trabalho com as melhores tecnologias web modernas: React, Next.js, Node.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, e muitas outras. Sempre escolho a stack mais adequada para cada projeto específico, priorizando performance, segurança e escalabilidade."
     },
     {
-      question: "Vocês oferecem manutenção para sites e sistemas web?",
-      answer: "Sim! Oferecemos pacotes de manutenção mensal que incluem atualizações de segurança, backups automáticos, monitoramento 24/7, otimização de performance e suporte técnico contínuo para garantir que seus projetos web sempre funcionem perfeitamente."
+      question: "Você oferece manutenção para sites e sistemas web?",
+      answer: "Sim! Ofereço pacotes de manutenção mensal que incluem atualizações de segurança, backups automáticos, monitoramento 24/7, otimização de performance e suporte técnico contínuo para garantir que seus projetos web sempre funcionem perfeitamente."
     },
     {
       question: "Posso acompanhar o desenvolvimento do meu projeto web?",
-      answer: "Claro! Utilizamos ferramentas de gestão de projeto onde você pode acompanhar o progresso em tempo real, dar feedback durante todo o desenvolvimento, testar funcionalidades e ter acesso a relatórios detalhados de cada etapa."
+      answer: "Claro! Utilizo ferramentas de gestão de projeto onde você pode acompanhar o progresso em tempo real, dar feedback durante todo o desenvolvimento, testar funcionalidades e ter acesso a relatórios detalhados de cada etapa."
     }
   ]
 
@@ -93,11 +89,11 @@ const Results = () => {
           </motion.div>
           
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Dúvidas sobre <span className="text-green-400">Desenvolvimento Web</span>
+            Dúvidas sobre meus <span className="text-green-400">Serviços</span>
           </h2>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Tire suas dúvidas sobre nossos serviços de desenvolvimento web, sites, sistemas e WordPress
+            Tire suas dúvidas sobre meus serviços de desenvolvimento web, sites e sistemas
           </p>
         </motion.div>
 
@@ -161,17 +157,18 @@ const Results = () => {
             Ainda tem dúvidas?
           </h3>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Entre em contato conosco e tire todas as suas dúvidas sobre nossos serviços
+            Entre em contato comigo e tire todas as suas dúvidas sobre meus serviços
           </p>
           <motion.button
             onClick={() => {
-              window.open('https://www.uixweb.com.br/chat', '_blank');
+              const form = document.getElementById('formulario-contato');
+              if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}
             className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Falar com Especialista
+            Falar comigo
             <ChevronDown className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline rotate-[-90deg]" />
           </motion.button>
         </motion.div>

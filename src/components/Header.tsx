@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
 
@@ -49,19 +50,21 @@ const Header = () => {
             {!isTesteGratis && (
               <>
                 <Link 
-                  href="https://www.linkedin.com/in/seu-perfil" 
+                  href="https://www.linkedin.com/in/marcelo-ayub-bueno/" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-green-400 font-medium transition-colors"
+                  className="text-gray-300 hover:text-green-400 font-medium transition-colors flex items-center gap-2"
                 >
+                  <FaLinkedin className="w-4 h-4" />
                   LinkedIn
                 </Link>
                 <Link 
-                  href="https://github.com/seu-usuario" 
+                  href="https://github.com/marceloayubbueno" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-green-400 font-medium transition-colors"
+                  className="text-gray-300 hover:text-green-400 font-medium transition-colors flex items-center gap-2"
                 >
+                  <FaGithub className="w-4 h-4" />
                   GitHub
                 </Link>
                 <Link 

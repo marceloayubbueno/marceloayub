@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import CountUp from 'react-countup'
 import { Code, Terminal, Cpu, Database, ArrowRight, Zap } from 'lucide-react'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { useRouter, usePathname } from 'next/navigation'
 
 const Hero = () => {
@@ -158,13 +159,26 @@ const Hero = () => {
                   
                   <motion.button
                     onClick={() => {
-                      window.open('https://linkedin.com/in/marcelo-ayub-bueno', '_blank');
+                      window.open('https://www.linkedin.com/in/marcelo-ayub-bueno/', '_blank');
                     }}
-                    className="bg-transparent border border-green-500 text-green-400 hover:bg-green-500 hover:text-white font-mono font-semibold py-2.5 px-6 rounded-lg text-sm transition-all duration-300"
+                    className="bg-transparent border border-green-500 text-green-400 hover:bg-green-500 hover:text-white font-mono font-semibold py-2.5 px-6 rounded-lg text-sm transition-all duration-300 flex items-center gap-2"
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.98 }}
                   >
+                    <FaLinkedin className="w-4 h-4" />
                     LinkedIn
+                  </motion.button>
+                  
+                  <motion.button
+                    onClick={() => {
+                      window.open('https://github.com/marceloayubbueno', '_blank');
+                    }}
+                    className="bg-transparent border border-green-500 text-green-400 hover:bg-green-500 hover:text-white font-mono font-semibold py-2.5 px-6 rounded-lg text-sm transition-all duration-300 flex items-center gap-2"
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <FaGithub className="w-4 h-4" />
+                    GitHub
                   </motion.button>
                 </div>
               </motion.div>

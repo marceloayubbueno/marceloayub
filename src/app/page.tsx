@@ -4,8 +4,6 @@ import Hero from '@/components/Hero'
 import AboutMe from '@/components/AboutMe'
 import Services from '@/components/Services'
 import Portfolio from '@/components/Portfolio'
-import Testimonials from '@/components/Testimonials'
-import Stats from '@/components/Stats'
 import Results from '@/components/Results'
 import ChatBotForm from '@/components/ChatBotForm'
 import ModernFooter from '@/components/ModernFooter'
@@ -23,8 +21,6 @@ export default function Home() {
       <AboutMe />
       <Services />
       <Portfolio />
-      <Testimonials />
-      <Stats />
       <Results />
       {/* Seção de Contato */}
       <section id="formulario-contato" className="relative overflow-hidden bg-black py-16">

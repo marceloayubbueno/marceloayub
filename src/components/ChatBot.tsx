@@ -239,7 +239,7 @@ const ChatBot = () => {
   const startChat = async () => {
     setStep('start');
     await addMessageWithDelay('Olá, tudo bem?', false, 500);
-    await addMessageWithDelay('Gostaria de saber mais sobre nossos serviços de desenvolvimento web?', false, 1500);
+    await addMessageWithDelay('Gostaria de saber mais sobre meus serviços de desenvolvimento web?', false, 1500);
     await addButtonsWithDelay([
       { text: (<><span>SIM, QUERO SABER MAIS</span> <span style={{fontSize:'1.2em',marginLeft:'0.3em'}}>&rarr;</span></>), class: 'sim', onClick: async () => {
         addMessage('SIM, QUERO SABER MAIS', true);
@@ -279,7 +279,7 @@ const ChatBot = () => {
     <div className={styles.chatbotContainer} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       {/* Header do Chatbot */}
       <div className={styles.chatbotHeader} style={{ flex: '0 0 auto' }}>
-        <span>Uixweb</span>
+        <span>Marcelo Ayub</span>
       </div>
       {/* Área de mensagens */}
       <div className={styles.chatbotMessages} style={{ flex: '1 1 auto', overflowY: 'auto', minHeight: 0 }}>

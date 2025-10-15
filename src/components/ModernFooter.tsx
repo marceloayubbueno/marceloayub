@@ -30,13 +30,14 @@ const ModernFooter = () => {
           
           <motion.button
             onClick={() => {
-              window.open('https://www.uixweb.com.br/chat', '_blank');
+              const form = document.getElementById('formulario-contato');
+              if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}
             className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-200 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {pathname === '/testegratis' ? 'Começar Meu Teste Agora' : 'Começar Agora'}
+            {pathname === '/testegratis' ? 'Começar Meu Teste Agora' : 'Vamos Conversar'}
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline" />
           </motion.button>
         </motion.div>
@@ -55,15 +56,15 @@ const ModernFooter = () => {
               <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
                 <span className="text-white font-mono text-lg leading-none">&lt;&gt;</span>
               </div>
-              <span className="text-2xl font-bold font-mono">Uix<span className="text-green-400">web</span></span>
+              <span className="text-2xl font-bold font-mono">Marcelo <span className="text-green-400">Ayub</span></span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Desenvolvemos soluções digitais que transformam ideias em realidade, impulsionando o crescimento do seu negócio.
+              Desenvolvedor Fullstack especializado em React, Next.js e TypeScript. Transformo ideias em soluções digitais que impulsionam resultados.
             </p>
             <div className="space-y-2">
               <div className="flex items-center text-gray-400">
                 <Mail className="w-4 h-4 mr-3" />
-              <span>contato@uixweb.com.br</span>
+                <span>contato@marceloayub.com</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="w-4 h-4 mr-3" />
@@ -71,10 +72,7 @@ const ModernFooter = () => {
               </div>
               <div className="flex items-center text-gray-400">
                 <MapPin className="w-4 h-4 mr-3" />
-                <span>Espirito Santo, Brasil</span>
-              </div>
-              <div className="flex items-center text-gray-400">
-                <span className="text-sm">CNPJ: 61.746.159/0001-44</span>
+                <span>Espírito Santo, Brasil</span>
               </div>
             </div>
           </motion.div>
@@ -139,7 +137,7 @@ const ModernFooter = () => {
           viewport={{ once: true }}
         >
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 Uixweb. Todos os direitos reservados.
+            © 2025 Marcelo Ayub Bueno. Todos os direitos reservados.
           </p>
           
           <div className="flex space-x-6 text-sm">
