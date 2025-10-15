@@ -97,9 +97,9 @@ const ChatBotForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-900/50 backdrop-blur-sm border border-green-500/20 p-8 rounded-xl shadow-xl flex flex-col gap-4 w-full max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-white mb-2">Vamos conversar sobre seu projeto</h2>
-      <p className="text-gray-300 mb-4">Preencha os dados abaixo e nossa equipe entrará em contato para apresentar uma proposta personalizada.</p>
+    <form onSubmit={handleSubmit} className="bg-gray-900/50 backdrop-blur-sm border border-green-500/20 p-6 rounded-xl shadow-xl flex flex-col gap-3 w-full max-w-md mx-auto">
+      <h3 className="text-xl font-bold text-white mb-1">Entre em Contato</h3>
+      <p className="text-gray-400 text-sm mb-2">Preencha os dados e vamos conversar sobre seu projeto.</p>
       <input
         type="text"
         name="nome"

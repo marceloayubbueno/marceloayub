@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 import CountUp from 'react-countup'
-import { Code, Terminal, Cpu, Database, ArrowRight, Play, Star, Zap, CheckCircle, Github, ExternalLink } from 'lucide-react'
+import { Code, Terminal, Cpu, Database, ArrowRight, Zap } from 'lucide-react'
 import { useRouter, usePathname } from 'next/navigation'
 
 const Hero = () => {
@@ -16,14 +17,14 @@ const Hero = () => {
   const pathname = usePathname()
 
   const stats = [
-    { number: '150+', label: 'Projetos desenvolvidos', icon: Code },
-    { number: '3M+', label: 'Linhas de código escritas', icon: Terminal },
-    { number: '98%', label: 'Performance média', icon: Cpu },
-    { number: '50+', label: 'Clientes satisfeitos', icon: Database }
+    { number: '10+', label: 'Projetos entregues', icon: Code },
+    { number: '95+', label: 'Performance Score', icon: Cpu },
+    { number: '50+', label: 'Integrações criadas', icon: Database },
+    { number: '3+', label: 'Anos de experiência', icon: Terminal }
   ]
 
   return (
-    <section className="relative overflow-hidden bg-black min-h-screen flex items-center" ref={ref}>
+    <section className="relative overflow-hidden bg-black min-h-screen flex items-center w-full" ref={ref}>
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated Grid */}
@@ -44,7 +45,7 @@ const Hero = () => {
           animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          &lt;Uixweb&gt;
+          &lt;Marcelo&gt;
         </motion.div>
         <motion.div 
           className="absolute top-40 right-20 text-green-400 font-mono text-sm opacity-30"
@@ -90,182 +91,214 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Content */}
-          <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {/* Badge */}
+      <div className="w-full px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left Column - Content */}
             <motion.div
-              className="inline-flex items-center px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 text-sm font-medium"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              className="space-y-6"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Zap className="w-4 h-4 mr-2" />
-              Desenvolvimento Web e Automações
-            </motion.div>
-
-            {/* Main Headline */}
-            <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              DESENVOLVIMENTO{' '}
-              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                WEB E AUTOMAÇÕES
-              </span>{' '}
-              PARA SEU NEGÓCIO
-            </motion.h1>
-
-            {/* Subheadline */}
-            <motion.p 
-              className="text-xl text-gray-300 leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              Sites profissionais, sistemas web, automações inteligentes e soluções digitais que impulsionam seu negócio.
-            </motion.p>
-
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-            >
-              <motion.button
-                onClick={() => {
-                  window.open('https://www.uixweb.com.br/chat', '_blank');
-                }}
-                className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+              {/* Badge */}
+              <motion.div
+                className="inline-flex items-center px-3 py-1.5 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 text-xs font-mono"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Falar com Especialista
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform inline" />
-              </motion.button>
-            </motion.div>
+                <Zap className="w-3 h-3 mr-2" />
+                Fullstack Developer | React, Next.js & Backend
+              </motion.div>
 
-            {/* Stats */}
-            <motion.div 
-              className="grid grid-cols-2 gap-6 pt-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-              {stats.map((stat, index) => {
-                const IconComponent = stat.icon
-                return (
-                  <motion.div
-                    key={index}
-                    className="text-center"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
+              {/* Main Headline */}
+              <motion.h1
+                className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-white leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                DESENVOLVO{' '}
+                <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent font-mono">
+                  SOLUÇÕES WEB COMPLETAS
+                </span>{' '}
+                COM AS MELHORES TECNOLOGIAS DO MERCADO
+              </motion.h1>
+
+              {/* Subheadline */}
+              <motion.p 
+                className="text-base text-gray-300 leading-relaxed font-mono"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                Criando interfaces modernas e otimizadas com React, Next.js, TypeScript, Tailwind, Cursor AI, Marketing Digital e Growth.
+              </motion.p>
+
+              {/* CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+              >
+                <div className="flex flex-wrap gap-3">
+                  <motion.button
+                    onClick={() => {
+                      const portfolio = document.getElementById('portfolio');
+                      if (portfolio) portfolio.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-mono font-semibold py-2.5 px-6 rounded-lg text-sm shadow-xl hover:shadow-green-500/25 transition-all duration-300 group"
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <div className="flex items-center justify-center mb-2">
-                      <IconComponent className="w-6 h-6 text-green-400 mr-2" />
-                      <span className="text-3xl font-bold text-white">
-                        <CountUp end={parseInt(stat.number.replace(/[^\d]/g, ''))} duration={2} delay={1.5 + index * 0.2} />
-                        {stat.number.includes('%') ? '%' : stat.number.includes('M') ? 'M+' : '+'}
-                      </span>
-                    </div>
-                    <p className="text-gray-400 text-sm">{stat.label}</p>
-                  </motion.div>
-                )
-              })}
-            </motion.div>
-          </motion.div>
-
-          {/* Right Column - Visual Elements */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            {/* Main Terminal Window */}
-            <motion.div 
-              className="relative bg-black/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-green-500/30 overflow-hidden"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Terminal Header */}
-              <div className="flex items-center justify-between p-4 border-b border-green-500/20">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    Ver Projetos
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform inline" />
+                  </motion.button>
+                  
+                  <motion.button
+                    onClick={() => {
+                      window.open('https://linkedin.com/in/marcelo-ayub-bueno', '_blank');
+                    }}
+                    className="bg-transparent border border-green-500 text-green-400 hover:bg-green-500 hover:text-white font-mono font-semibold py-2.5 px-6 rounded-lg text-sm transition-all duration-300"
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    LinkedIn
+                  </motion.button>
                 </div>
-                <div className="text-green-400 text-sm font-mono">Uixweb Terminal</div>
-              </div>
+              </motion.div>
 
-              {/* Terminal Content */}
-              <div className="p-6 space-y-4">
-                <motion.div 
-                  className="text-green-400 font-mono text-sm"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 2 }}
+              {/* Stats */}
+              <motion.div 
+                className="grid grid-cols-2 gap-4 pt-4"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                {stats.map((stat, index) => {
+                  const IconComponent = stat.icon
+                  return (
+                    <motion.div
+                      key={index}
+                      className="text-center"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
+                    >
+                      <div className="flex items-center justify-center mb-1">
+                        <IconComponent className="w-4 h-4 text-green-400 mr-2" />
+                        <span className="text-xl font-mono font-bold text-white">
+                          <CountUp end={parseInt(stat.number.replace(/[^\d]/g, ''))} duration={2} delay={1.5 + index * 0.2} />
+                          {stat.number.includes('%') ? '%' : stat.number.includes('M') ? 'M+' : '+'}
+                        </span>
+                      </div>
+                      <p className="text-gray-400 text-xs font-mono">{stat.label}</p>
+                    </motion.div>
+                  )
+                })}
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column - Photo */}
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="relative group">
+                {/* Glow Effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                
+                {/* Border Glow */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Image Container */}
+                <div className="relative bg-black/20 backdrop-blur-sm rounded-xl p-1 border border-green-500/30">
+                  <Image
+                    src="/images/marcelo.png"
+                    alt="Marcelo Ayub Bueno"
+                    width={300}
+                    height={400}
+                    className="w-full max-w-sm mx-auto h-auto rounded-lg shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                    priority
+                  />
+                </div>
+                
+                {/* Floating Code Elements */}
+                <motion.div
+                  className="absolute -top-8 left-4 text-green-400/60 font-mono text-xs"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    opacity: [0.4, 0.8, 0.4]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <div className="flex items-center mb-2">
-                    <span className="text-emerald-400">$</span>
-                    <span className="ml-2">npm create uixweb-app</span>
-                  </div>
-                  <div className="text-gray-300 text-xs">
-                    ✓ Instalando dependências...<br/>
-                    ✓ Configurando ambiente...<br/>
-                    ✓ Criando estrutura do projeto...<br/>
-                    ✓ Aplicando otimizações...<br/>
+                  &lt;React&gt;
+                </motion.div>
+                
+                <motion.div
+                  className="absolute top-1/2 -left-8 text-green-400/60 font-mono text-xs"
+                  animate={{ 
+                    x: [0, -5, 0],
+                    opacity: [0.4, 0.8, 0.4]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  Next.js
+                </motion.div>
+
+                {/* Floating Stats */}
+                <motion.div 
+                  className="absolute -top-4 -right-4 bg-gradient-to-br from-green-500/95 to-emerald-500/95 backdrop-blur-sm border border-green-400/50 rounded-xl p-3 shadow-xl"
+                  initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                  transition={{ duration: 0.8, delay: 1.5, type: "spring" }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                >
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-white font-mono">10+</div>
+                    <div className="text-xs text-green-100 font-mono">Projetos</div>
                   </div>
                 </motion.div>
 
                 <motion.div 
-                  className="bg-green-500/10 border border-green-500/30 rounded-lg p-4"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 2.5 }}
+                  className="absolute -bottom-4 -left-4 bg-gradient-to-br from-emerald-500/95 to-green-500/95 backdrop-blur-sm border border-green-400/50 rounded-xl p-3 shadow-xl"
+                  initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                  transition={{ duration: 0.8, delay: 1.7, type: "spring" }}
+                  whileHover={{ scale: 1.1, rotate: -5 }}
                 >
-                  <div className="text-green-400 text-sm font-mono mb-2">🚀 Projeto iniciado com sucesso!</div>
-                  <div className="text-gray-300 text-xs">
-                    Performance: 98%<br/>
-                    Tempo de carregamento: 2.3s<br/>
-                    SEO Score: 95/100
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-white font-mono">95+</div>
+                    <div className="text-xs text-green-100 font-mono">Performance</div>
                   </div>
+                </motion.div>
+
+                {/* Floating Tech Badges */}
+                <motion.div
+                  className="absolute top-8 -right-12 bg-black/80 backdrop-blur-sm border border-green-500/30 rounded-lg px-2 py-1"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 2 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="text-green-400 font-mono text-xs">TypeScript</span>
+                </motion.div>
+
+                <motion.div
+                  className="absolute bottom-8 -left-12 bg-black/80 backdrop-blur-sm border border-green-500/30 rounded-lg px-2 py-1"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 2.2 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="text-green-400 font-mono text-xs">Tailwind</span>
                 </motion.div>
               </div>
             </motion.div>
-
-            {/* Floating Elements */}
-            <motion.div 
-              className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg"
-              animate={{ 
-                y: [0, -10, 0],
-                rotate: [0, 5, 0]
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Code className="w-8 h-8 text-white" />
-            </motion.div>
-
-            <motion.div 
-              className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-500 rounded-full flex items-center justify-center shadow-lg"
-              animate={{ 
-                y: [0, 10, 0],
-                rotate: [0, -5, 0]
-              }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Terminal className="w-6 h-6 text-white" />
-            </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

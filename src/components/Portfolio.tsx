@@ -23,6 +23,7 @@ const Portfolio = () => {
       description: 'Site institucional completo para plataforma de indicação de clientes com design moderno e navegação intuitiva',
       technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
       results: ['Design responsivo', 'Performance otimizada', 'SEO otimizado'],
+      metrics: { performance: 95, accessibility: 98, seo: 92, bestPractices: 96 },
       icon: Globe,
       color: 'from-green-500 to-emerald-500',
       image: '/images/cases/lp-indicacao.jpg'
@@ -34,6 +35,7 @@ const Portfolio = () => {
       description: 'Site institucional para plataforma de geração de conteúdo com IA para LinkedIn com foco em conversão',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       results: ['Design moderno', 'Performance alta', 'Conversão otimizada'],
+      metrics: { performance: 93, accessibility: 96, seo: 94, bestPractices: 95 },
       icon: Globe,
       color: 'from-emerald-500 to-green-500',
       image: null
@@ -45,6 +47,7 @@ const Portfolio = () => {
       description: 'Site institucional para plataforma de agendamento de consultas médicas com design profissional',
       technologies: ['React', 'Node.js', 'MongoDB'],
       results: ['Design profissional', 'Interface intuitiva', 'Integração de pagamentos'],
+      metrics: { performance: 91, accessibility: 97, seo: 90, bestPractices: 94 },
       icon: Globe,
       color: 'from-green-600 to-emerald-600',
       image: null
@@ -57,6 +60,7 @@ const Portfolio = () => {
       description: 'Sistema completo para gestão de programas de indicação com dashboard e comissões',
       technologies: ['Next.js', 'TypeScript', 'PostgreSQL'],
       results: ['Dashboard completo', 'Gestão de comissões', 'Relatórios detalhados'],
+      metrics: { performance: 94, accessibility: 95, seo: 88, bestPractices: 96 },
       icon: Code,
       color: 'from-emerald-500 to-green-500',
       image: '/images/cases/plataforma-indicacao.jpg'
@@ -68,6 +72,7 @@ const Portfolio = () => {
       description: 'Sistema de cardápio digital com QR Code, gestão de produtos e pedidos online integrado',
       technologies: ['React', 'Node.js', 'MongoDB'],
       results: ['Interface intuitiva', 'QR Code integrado', 'Gestão de pedidos'],
+      metrics: { performance: 92, accessibility: 94, seo: 87, bestPractices: 93 },
       icon: Smartphone,
       color: 'from-green-600 to-emerald-600',
       image: null
@@ -79,6 +84,7 @@ const Portfolio = () => {
       description: 'Sistema de geração automática de posts para LinkedIn usando inteligência artificial',
       technologies: ['Next.js', 'OpenAI API', 'PostgreSQL'],
       results: ['IA integrada', 'Posts automáticos', 'Agendamento'],
+      metrics: { performance: 96, accessibility: 97, seo: 91, bestPractices: 97 },
       icon: Zap,
       color: 'from-emerald-600 to-green-600',
       image: null
@@ -91,6 +97,7 @@ const Portfolio = () => {
       description: 'Sistema completo de automação para campanhas de marketing digital com N8N',
       technologies: ['N8N', 'Webhooks', 'APIs', 'Integrações'],
       results: ['Campanhas automáticas', 'Lead nurturing', 'Relatórios em tempo real'],
+      metrics: { performance: 98, accessibility: 100, seo: 95, bestPractices: 98 },
       icon: Workflow,
       color: 'from-green-500 to-emerald-500',
       image: null
@@ -102,6 +109,7 @@ const Portfolio = () => {
       description: 'Automações para gestão de estoque, pedidos e atendimento ao cliente',
       technologies: ['N8N', 'Shopify API', 'WhatsApp API', 'Email Marketing'],
       results: ['Gestão automática', 'Atendimento 24/7', 'Redução de erros'],
+      metrics: { performance: 97, accessibility: 100, seo: 93, bestPractices: 96 },
       icon: Workflow,
       color: 'from-emerald-500 to-green-500',
       image: null
@@ -114,6 +122,7 @@ const Portfolio = () => {
       description: 'Loja virtual completa para venda de produtos gamer e tecnologia com catálogo dinâmico',
       technologies: ['Next.js', 'Stripe', 'PostgreSQL'],
       results: ['Catálogo completo', 'Pagamentos seguros', 'Gestão de estoque'],
+      metrics: { performance: 90, accessibility: 93, seo: 89, bestPractices: 92 },
       icon: ShoppingCart,
       color: 'from-green-600 to-emerald-600',
       image: '/images/cases/ecommerce.png'
@@ -125,6 +134,7 @@ const Portfolio = () => {
       description: 'Plataforma de venda de produtos digitais com entrega automática e área de membros',
       technologies: ['React', 'Node.js', 'MongoDB'],
       results: ['Download automático', 'Sistema de afiliados', 'Área de membros'],
+      metrics: { performance: 94, accessibility: 95, seo: 91, bestPractices: 94 },
       icon: Zap,
       color: 'from-emerald-600 to-green-600',
       image: null
@@ -141,7 +151,7 @@ const Portfolio = () => {
   const itemsPerView = 3 // Desktop: 3 cards, Mobile: 1 card
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden" ref={ref}>
+    <section id="portfolio" className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden" ref={ref}>
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
@@ -300,62 +310,41 @@ const Portfolio = () => {
                         </div>
                       </div>
                       
-                      {/* Project Info */}
-                      <div className="space-y-6">
+                      {/* Project Info - Simplificado */}
+                      <div className="space-y-4">
                         <div>
-                          <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-green-400 transition-colors">
+                          <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-green-400 transition-colors">
                             {project.title}
                           </h3>
                           
-                          <p className="text-gray-300 leading-relaxed">
+                          <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
                             {project.description}
                           </p>
                         </div>
                         
-                        {/* Technologies */}
-                        <div>
-                          <h4 className="text-sm font-semibold text-green-400 mb-3 uppercase tracking-wider">Tecnologias</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                              <span key={techIndex} className="bg-green-500/10 text-green-400 text-sm px-3 py-1 rounded-full border border-green-500/20">
-                                {tech}
-                              </span>
-                            ))}
-                            {project.technologies.length > 3 && (
-                              <span className="bg-gray-500/10 text-gray-400 text-sm px-3 py-1 rounded-full">
-                                +{project.technologies.length - 3}
-                              </span>
-                            )}
-                          </div>
+                        {/* Technologies - Apenas 3 principais */}
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                            <span key={techIndex} className="bg-green-500/10 text-green-400 text-xs px-3 py-1 rounded-full border border-green-500/20 font-mono">
+                              {tech}
+                            </span>
+                          ))}
                         </div>
                         
-                        {/* Results */}
-                        <div>
-                          <h4 className="text-sm font-semibold text-green-400 mb-3 uppercase tracking-wider">Resultados</h4>
-                          <div className="space-y-3">
-                            {project.results.map((result, resultIndex) => (
-                              <div key={resultIndex} className="flex items-center space-x-3">
-                                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                                <span className="text-gray-300">{result}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        {/* CTA */}
+                        {/* CTA - Simplificado */}
                         {project.id === 1 ? (
                           <a 
                             href="https://virallead.com.br/" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 group-hover:shadow-lg group-hover:shadow-green-500/25 flex items-center justify-center"
+                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center text-sm"
                           >
                             <ExternalLink className="w-4 h-4 mr-2" />
-                            Acessar Site
+                            Ver Site
                           </a>
                         ) : (
-                          <button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 group-hover:shadow-lg group-hover:shadow-green-500/25">
-                            Ver Case Completo
+                          <button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 text-sm">
+                            Ver Detalhes
                           </button>
                         )}
                       </div>

@@ -3,9 +3,9 @@ import './globals.css'
 import PixelAndConsentProvider from '../components/PixelAndConsentProvider';
 
 export const metadata: Metadata = {
-  title: 'Uixweb - Desenvolvimento Web e Automações | Sites, Sistemas Web, Automações N8N e E-commerce',
-  description: 'Desenvolvemos sites profissionais, sistemas web personalizados, automações inteligentes com N8N e e-commerce completos. Soluções digitais modernas e otimizadas para impulsionar seu negócio.',
-  keywords: 'desenvolvimento web, automações, sites profissionais, sistemas web, N8N, e-commerce, sites responsivos, React, Next.js, automação de processos, agência web',
+  title: 'Marcelo Ayub Bueno | Desenvolvedor Fullstack React, Next.js & TypeScript',
+  description: 'Desenvolvedor Fullstack especializado em React, Next.js, TypeScript e Node.js. Com background em Marketing Digital, crio sistemas web completos focados em performance, UX e resultados mensuráveis.',
+  keywords: 'desenvolvedor fullstack, react developer, next.js, typescript, node.js, frontend developer, backend developer, performance web, lighthouse 95+, marketing digital, growth, APIs REST, integrações, portfolio desenvolvedor',
 }
 
 export default function RootLayout({

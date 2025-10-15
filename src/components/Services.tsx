@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Code, Globe, ShoppingCart, Database, Zap, ArrowRight, Workflow } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiPostgresql, SiMongodb } from 'react-icons/si'
+import { TbApi, TbBrandWhatsapp, TbBolt } from 'react-icons/tb'
+import { FaChartLine } from 'react-icons/fa'
 
 const Services = () => {
   const { ref, inView } = useInView({
@@ -11,190 +12,97 @@ const Services = () => {
     triggerOnce: true,
   })
 
-  const router = useRouter()
+  const technologies = [
+    { name: 'React', icon: SiReact, color: '#61DAFB' },
+    { name: 'Next.js', icon: SiNextdotjs, color: '#FFFFFF' },
+    { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+    { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
+    { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
+    { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
+    { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+    { name: 'APIs REST', icon: TbApi, color: '#10B981' },
+  ]
 
-  const services = [
-    {
-      icon: Globe,
-      title: 'Sites e Landing Pages',
-      description: 'Sites institucionais e landing pages de alta conversão para representar sua marca',
-      features: ['Design responsivo', 'SEO otimizado', 'Foco em conversão'],
-      color: 'from-green-500 to-emerald-500',
-    },
-    {
-      icon: Code,
-      title: 'Sistemas Web',
-      description: 'Soluções web sob medida para suas necessidades específicas de negócio',
-      features: ['Desenvolvimento custom', 'Integrações APIs', 'Relatórios avançados'],
-      color: 'from-emerald-500 to-green-500',
-    },
-    {
-      icon: ShoppingCart,
-      title: 'E-commerce',
-      description: 'Lojas virtuais robustas e escaláveis para vender seus produtos online',
-      features: ['Catálogo de produtos', 'Gateway de pagamento', 'Gestão de pedidos'],
-      color: 'from-green-600 to-emerald-600',
-    },
-    {
-      icon: Workflow,
-      title: 'Automações Inteligentes',
-      description: 'Automações de processos com N8N para otimizar seu fluxo de trabalho',
-      features: ['Integração de sistemas', 'Workflows automatizados', 'Economia de tempo'],
-      color: 'from-green-500 to-emerald-500',
-    }
+  const specialties = [
+    { name: 'Performance 95+', icon: TbBolt },
+    { name: 'Growth & Marketing', icon: FaChartLine },
+    { name: 'WhatsApp Integration', icon: TbBrandWhatsapp },
   ]
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden" ref={ref}>
-      {/* Background Elements */}
+    <section className="py-16 bg-black relative overflow-hidden" ref={ref}>
+      {/* Background subtle */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/20 via-transparent to-emerald-900/20"></div>
-        <motion.div 
-          className="absolute top-20 right-20 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        ></motion.div>
-        <motion.div 
-          className="absolute bottom-20 left-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.1, 0.2],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        ></motion.div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-emerald-900/10"></div>
       </div>
 
       <div className="container relative z-10">
-        {/* Header - Minimalist */}
+        {/* Header */}
         <motion.div 
-          className="text-center mb-24"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            Desenvolvimento <span className="text-green-400">Web e Automações</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+            Tech <span className="text-green-400">Stack</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto"></div>
+          <p className="text-gray-400 text-sm">Tecnologias que domino</p>
         </motion.div>
 
-        {/* Services - Creative Layout */}
-        <div className="space-y-16">
-          {services.map((service, index) => {
-            const IconComponent = service.icon
-            const isEven = index % 2 === 0
+        {/* Technologies Grid - Ícones Oficiais */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 max-w-5xl mx-auto mb-8">
+          {technologies.map((tech, index) => {
+            const IconComponent = tech.icon
             
             return (
               <motion.div
                 key={index}
-                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-20`}
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-4 border border-gray-800 hover:border-green-500/40 transition-all duration-300 group text-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                whileHover={{ y: -5 }}
               >
-                {/* Content */}
-                <div className="flex-1 space-y-6">
-                  <motion.div 
-                    className="inline-flex items-center space-x-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-                  >
-                    <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center`}>
-                      <IconComponent className="w-6 h-6 text-white" />
-                    </div>
-                    <span className="text-green-400 text-sm font-medium tracking-wider uppercase">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                  </motion.div>
-                  
-                  <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                    {service.description}
-                  </p>
-                  
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    {service.features.map((feature, featureIndex) => (
-                      <motion.div
-                        key={featureIndex}
-                        className="flex items-center space-x-3"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={inView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.4, delay: index * 0.2 + 0.5 + featureIndex * 0.1 }}
-                      >
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span className="text-gray-300">{feature}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                  
-                  <motion.button
-                    className="inline-flex items-center space-x-2 bg-transparent border-2 border-green-500 text-green-400 px-8 py-4 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-all duration-300 group"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: index * 0.2 + 0.8 }}
-                  >
-                    <span>Saiba mais</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </motion.button>
+                {/* Official Icon */}
+                <div className="flex justify-center mb-2">
+                  <IconComponent 
+                    className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" 
+                    style={{ color: tech.color }}
+                  />
                 </div>
                 
-                {/* Visual Element */}
-                <div className="flex-1 flex justify-center">
-                  <motion.div 
-                    className={`relative w-80 h-80 ${isEven ? 'lg:w-96 lg:h-96' : 'lg:w-80 lg:h-80'}`}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.8, delay: index * 0.2 + 0.4 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-3xl opacity-20 blur-2xl`}></div>
-                    <div className="relative w-full h-full bg-black/50 backdrop-blur-sm rounded-3xl border border-green-500/20 flex items-center justify-center">
-                      <IconComponent className={`${isEven ? 'w-24 h-24' : 'w-20 h-20'} text-green-400 opacity-60`} />
-                    </div>
-                  </motion.div>
-                </div>
+                {/* Tech Name */}
+                <span className="text-gray-400 text-xs font-mono group-hover:text-white transition-colors">
+                  {tech.name}
+                </span>
               </motion.div>
             )
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div 
-          className="text-center mt-24"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          <motion.button
-            onClick={() => {
-              const form = document.getElementById('formulario-contato');
-              if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }}
-            className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-6 px-12 rounded-2xl text-xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Falar com Especialista
-            <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform inline" />
-          </motion.button>
-        </motion.div>
+        {/* Specialties */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {specialties.map((specialty, index) => {
+            const IconComponent = specialty.icon
+            
+            return (
+              <motion.div
+                key={index}
+                className="bg-green-500/10 backdrop-blur-sm rounded-lg p-4 border border-green-500/30 hover:border-green-500/50 transition-all duration-300 group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex items-center justify-center space-x-3">
+                  <IconComponent className="w-5 h-5 text-green-400 group-hover:scale-110 transition-transform" />
+                  <span className="text-white font-semibold text-sm">{specialty.name}</span>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
       </div>
     </section>
   )
