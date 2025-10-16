@@ -34,8 +34,8 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-10">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Vamos <span className="text-green-400">Conversar</span>?
+              <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
+                VAMOS <span className="text-green-400">CONVERSAR</span>?
               </h2>
               <p className="text-gray-400 text-base max-w-2xl mx-auto">
                 Procurando um desenvolvedor fullstack para seu projeto? Estou disponível para freelas, consultorias e oportunidades.

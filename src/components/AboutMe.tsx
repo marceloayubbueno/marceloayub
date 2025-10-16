@@ -75,8 +75,8 @@ const AboutMe = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Sobre <span className="text-green-400">Mim</span>
+          <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
+            SOBRE <span className="text-green-400">MIM</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto"></div>
         </motion.div>

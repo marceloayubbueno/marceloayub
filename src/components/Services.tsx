@@ -44,8 +44,8 @@ const Services = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            Tech <span className="text-green-400">Stack</span>
+          <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-3">
+            TECH <span className="text-green-400">STACK</span>
           </h2>
           <p className="text-gray-400 text-sm">Tecnologias que domino</p>
         </motion.div>

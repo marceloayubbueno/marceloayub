@@ -88,8 +88,8 @@ const Results = () => {
             Dúvidas Frequentes
           </motion.div>
           
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Dúvidas sobre meus <span className="text-green-400">Serviços</span>
+          <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-6">
+            DÚVIDAS SOBRE MEUS <span className="text-green-400">SERVIÇOS</span>
           </h2>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

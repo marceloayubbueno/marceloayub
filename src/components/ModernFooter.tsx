@@ -19,9 +19,9 @@ const ModernFooter = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Pronto para transformar<br />
-            <span className="text-green-400">sua ideia em realidade</span>?
+          <h2 className="text-4xl md:text-5xl font-mono font-bold mb-6">
+            PRONTO PARA TRANSFORMAR<br />
+            <span className="text-green-400">SUA IDEIA EM REALIDADE</span>?
           </h2>
           
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">

@@ -225,11 +225,8 @@ const Hero = () => {
                 {/* Glow Effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
                 
-                {/* Border Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
                 {/* Image Container */}
-                <div className="relative bg-black/20 backdrop-blur-sm rounded-xl p-1 border border-green-500/30">
+                <div className="relative bg-black/20 backdrop-blur-sm rounded-xl p-1">
                   <Image
                     src="/images/marcelo.png"
                     alt="Marcelo Ayub Bueno"
