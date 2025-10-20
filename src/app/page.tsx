@@ -9,6 +9,7 @@ import ChatBotForm from '@/components/ChatBotForm'
 import ModernFooter from '@/components/ModernFooter'
 import ChatBot from '@/components/ChatBot'
 import { useState } from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 export default function Home() {
   const [showChat, setShowChat] = useState(false);
@@ -51,8 +52,8 @@ export default function Home() {
       </section>
       <ModernFooter />
 
-      {/* ChatBot Flutuante */}
-      <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 9999 }}>
+      {/* ChatBot Flutuante - Comentado para uso futuro */}
+      {/* <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 9999 }}>
         <button
           onClick={() => setShowChat((v) => !v)}
           style={{
@@ -88,7 +89,42 @@ export default function Home() {
         >
           <ChatBot />
         </div>
-      )}
+      )} */}
+
+      {/* WhatsApp Flutuante */}
+      <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 9999 }}>
+        <a
+          href="https://wa.me/5528998846446"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '50%',
+            width: '60px',
+            height: '60px',
+            cursor: 'pointer',
+            fontSize: '24px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 4px 16px rgba(37, 211, 102, 0.3)',
+            transition: 'all 0.3s ease',
+            textDecoration: 'none',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.1)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(37, 211, 102, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.boxShadow = '0 4px 16px rgba(37, 211, 102, 0.3)';
+          }}
+        >
+          <FaWhatsapp />
+        </a>
+      </div>
     </main>
   )
 } 

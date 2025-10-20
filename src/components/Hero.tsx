@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import CountUp from 'react-countup'
 import { Code, Terminal, Cpu, Database, ArrowRight, Zap } from 'lucide-react'
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa'
 import { useRouter, usePathname } from 'next/navigation'
 
 const Hero = () => {
@@ -146,15 +146,14 @@ const Hero = () => {
                 <div className="flex flex-wrap gap-3">
                   <motion.button
                     onClick={() => {
-                      const portfolio = document.getElementById('portfolio');
-                      if (portfolio) portfolio.scrollIntoView({ behavior: 'smooth' });
+                      window.open('https://wa.me/5528998846446', '_blank');
                     }}
-                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-mono font-semibold py-2.5 px-6 rounded-lg text-sm shadow-xl hover:shadow-green-500/25 transition-all duration-300 group"
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-mono font-semibold py-2.5 px-6 rounded-lg text-sm shadow-xl hover:shadow-green-500/25 transition-all duration-300 group flex items-center gap-2"
                     whileHover={{ scale: 1.02, y: -1 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Ver Projetos
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform inline" />
+                    <FaWhatsapp className="w-4 h-4" />
+                    Entrar em contato
                   </motion.button>
                   
                   <motion.button
